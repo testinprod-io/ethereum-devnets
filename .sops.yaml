@@ -1,0 +1,5 @@
+# pgp:'FFA8015BD6212E579B3813B78DC0A30AA95F49A1' # https://github.com/mininny.gpg
+
+creation_rules:
+  - pgp: >-
+      FFA8015BD6212E579B3813B78DC0A30AA95F49A1 
