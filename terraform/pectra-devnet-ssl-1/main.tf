@@ -68,7 +68,7 @@ variable "base_cidr_block" {
 ////////////////////////////////////////////////////////////////////////////////////////
 locals {
   vm_groups = [
-    # var.mev_relay,
+    var.mev_relay,
     var.ethstats,
     var.bootnode,
     var.xatu,
@@ -120,6 +120,5 @@ locals {
     var.grandine_ethereumjs,
     var.grandine_reth,
     var.grandine_nimbusel,
-    
   ]
 }

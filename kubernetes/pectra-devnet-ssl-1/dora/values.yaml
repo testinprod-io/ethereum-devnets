@@ -56,16 +56,8 @@ dora:
     name: lighthouse-besu-1
     priority: -1
     archive: true
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lighthouse-erigon-1
-    priority: -1
-    archive: true
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigonTwo-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lighthouse-erigonTwo-1
-    priority: -1
-    archive: true
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-ethereumjs-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lighthouse-ethereumjs-1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-2.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-besu-2
     priority: -1
     archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-geth-1.pectra-devnet-ssl-1.yolkie.xyz
@@ -80,6 +72,22 @@ dora:
     name: lighthouse-geth-3
     priority: -1
     archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-geth-4.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-geth-4
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-geth-5.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-geth-5
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-geth-6.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-geth-6
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-geth-7.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-geth-7
+    priority: -1
+    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-nethermind-1.pectra-devnet-ssl-1.yolkie.xyz
     name: lighthouse-nethermind-1
     priority: -1
@@ -92,25 +100,32 @@ dora:
     name: lighthouse-nethermind-3
     priority: -1
     archive: true
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-nimbusel-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lighthouse-nimbusel-1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-nethermind-4.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-nethermind-4
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-nethermind-5.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-nethermind-5
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-nethermind-6.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-nethermind-6
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-nethermind-7.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-nethermind-7
     priority: -1
     archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-reth-1.pectra-devnet-ssl-1.yolkie.xyz
     name: lighthouse-reth-1
     priority: -1
     archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-reth-2.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-reth-2
+    priority: -1
+    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-besu-1.pectra-devnet-ssl-1.yolkie.xyz
     name: lodestar-besu-1
-    priority: -1
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-erigon-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lodestar-erigon-1
-    priority: -1
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-erigonTwo-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lodestar-erigonTwo-1
-    priority: -1
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-ethereumjs-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lodestar-ethereumjs-1
     priority: -1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-1.pectra-devnet-ssl-1.yolkie.xyz
     name: lodestar-geth-1
@@ -124,23 +139,14 @@ dora:
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-nethermind-2.pectra-devnet-ssl-1.yolkie.xyz
     name: lodestar-nethermind-2
     priority: -1
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-nimbusel-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lodestar-nimbusel-1
-    priority: -1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-reth-1.pectra-devnet-ssl-1.yolkie.xyz
     name: lodestar-reth-1
     priority: -1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-besu-1.pectra-devnet-ssl-1.yolkie.xyz
     name: prysm-besu-1
     priority: -1
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-erigon-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: prysm-erigon-1
-    priority: -1
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-erigonTwo-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: prysm-erigonTwo-1
-    priority: -1
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-ethereumjs-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: prysm-ethereumjs-1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-besu-2.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-besu-2
     priority: -1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-geth-1.pectra-devnet-ssl-1.yolkie.xyz
     name: prysm-geth-1
@@ -151,6 +157,18 @@ dora:
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-geth-3.pectra-devnet-ssl-1.yolkie.xyz
     name: prysm-geth-3
     priority: -1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-geth-4.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-geth-4
+    priority: -1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-geth-5.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-geth-5
+    priority: -1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-geth-6.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-geth-6
+    priority: -1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-geth-7.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-geth-7
+    priority: -1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-nethermind-1.pectra-devnet-ssl-1.yolkie.xyz
     name: prysm-nethermind-1
     priority: -1
@@ -160,23 +178,26 @@ dora:
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-nethermind-3.pectra-devnet-ssl-1.yolkie.xyz
     name: prysm-nethermind-3
     priority: -1
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-nimbusel-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: prysm-nimbusel-1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-nethermind-4.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-nethermind-4
+    priority: -1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-nethermind-5.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-nethermind-5
+    priority: -1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-nethermind-6.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-nethermind-6
+    priority: -1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-nethermind-7.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-nethermind-7
     priority: -1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-reth-1.pectra-devnet-ssl-1.yolkie.xyz
     name: prysm-reth-1
     priority: -1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-reth-2.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-reth-2
+    priority: -1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.teku-besu-1.pectra-devnet-ssl-1.yolkie.xyz
     name: teku-besu-1
-    priority: -1
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.teku-erigon-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: teku-erigon-1
-    priority: -1
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.teku-erigonTwo-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: teku-erigonTwo-1
-    priority: -1
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.teku-ethereumjs-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: teku-ethereumjs-1
     priority: -1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.teku-geth-1.pectra-devnet-ssl-1.yolkie.xyz
     name: teku-geth-1
@@ -187,6 +208,9 @@ dora:
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.teku-geth-3.pectra-devnet-ssl-1.yolkie.xyz
     name: teku-geth-3
     priority: -1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.teku-geth-4.pectra-devnet-ssl-1.yolkie.xyz
+    name: teku-geth-4
+    priority: -1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.teku-nethermind-1.pectra-devnet-ssl-1.yolkie.xyz
     name: teku-nethermind-1
     priority: -1
@@ -196,8 +220,8 @@ dora:
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.teku-nethermind-3.pectra-devnet-ssl-1.yolkie.xyz
     name: teku-nethermind-3
     priority: -1
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.teku-nimbusel-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: teku-nimbusel-1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.teku-nethermind-4.pectra-devnet-ssl-1.yolkie.xyz
+    name: teku-nethermind-4
     priority: -1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.teku-reth-1.pectra-devnet-ssl-1.yolkie.xyz
     name: teku-reth-1
@@ -216,16 +240,8 @@ dora:
     name: lighthouse-besu-1
     priority: -1
     archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-erigon-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lighthouse-erigon-1
-    priority: -1
-    archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-erigonTwo-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lighthouse-erigonTwo-1
-    priority: -1
-    archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-ethereumjs-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lighthouse-ethereumjs-1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-2.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-besu-2
     priority: -1
     archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-1.pectra-devnet-ssl-1.yolkie.xyz
@@ -240,6 +256,22 @@ dora:
     name: lighthouse-geth-3
     priority: -1
     archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-4.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-geth-4
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-5.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-geth-5
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-6.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-geth-6
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-7.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-geth-7
+    priority: -1
+    archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-nethermind-1.pectra-devnet-ssl-1.yolkie.xyz
     name: lighthouse-nethermind-1
     priority: -1
@@ -252,28 +284,32 @@ dora:
     name: lighthouse-nethermind-3
     priority: -1
     archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-nimbusel-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lighthouse-nimbusel-1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-nethermind-4.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-nethermind-4
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-nethermind-5.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-nethermind-5
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-nethermind-6.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-nethermind-6
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-nethermind-7.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-nethermind-7
     priority: -1
     archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-1.pectra-devnet-ssl-1.yolkie.xyz
     name: lighthouse-reth-1
     priority: -1
     archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-2.pectra-devnet-ssl-1.yolkie.xyz
+    name: lighthouse-reth-2
+    priority: -1
+    archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-besu-1.pectra-devnet-ssl-1.yolkie.xyz
     name: lodestar-besu-1
-    priority: -1
-    archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-erigon-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lodestar-erigon-1
-    priority: -1
-    archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-erigonTwo-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lodestar-erigonTwo-1
-    priority: -1
-    archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-ethereumjs-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lodestar-ethereumjs-1
     priority: -1
     archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-1.pectra-devnet-ssl-1.yolkie.xyz
@@ -292,10 +328,6 @@ dora:
     name: lodestar-nethermind-2
     priority: -1
     archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-nimbusel-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: lodestar-nimbusel-1
-    priority: -1
-    archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-reth-1.pectra-devnet-ssl-1.yolkie.xyz
     name: lodestar-reth-1
     priority: -1
@@ -304,16 +336,8 @@ dora:
     name: prysm-besu-1
     priority: -1
     archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-erigon-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: prysm-erigon-1
-    priority: -1
-    archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-erigonTwo-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: prysm-erigonTwo-1
-    priority: -1
-    archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-ethereumjs-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: prysm-ethereumjs-1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-besu-2.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-besu-2
     priority: -1
     archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-geth-1.pectra-devnet-ssl-1.yolkie.xyz
@@ -328,6 +352,22 @@ dora:
     name: prysm-geth-3
     priority: -1
     archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-geth-4.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-geth-4
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-geth-5.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-geth-5
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-geth-6.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-geth-6
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-geth-7.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-geth-7
+    priority: -1
+    archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-nethermind-1.pectra-devnet-ssl-1.yolkie.xyz
     name: prysm-nethermind-1
     priority: -1
@@ -340,28 +380,32 @@ dora:
     name: prysm-nethermind-3
     priority: -1
     archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-nimbusel-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: prysm-nimbusel-1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-nethermind-4.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-nethermind-4
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-nethermind-5.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-nethermind-5
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-nethermind-6.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-nethermind-6
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-nethermind-7.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-nethermind-7
     priority: -1
     archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-reth-1.pectra-devnet-ssl-1.yolkie.xyz
     name: prysm-reth-1
     priority: -1
     archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-reth-2.pectra-devnet-ssl-1.yolkie.xyz
+    name: prysm-reth-2
+    priority: -1
+    archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-besu-1.pectra-devnet-ssl-1.yolkie.xyz
     name: teku-besu-1
-    priority: -1
-    archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-erigon-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: teku-erigon-1
-    priority: -1
-    archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-erigonTwo-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: teku-erigonTwo-1
-    priority: -1
-    archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-ethereumjs-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: teku-ethereumjs-1
     priority: -1
     archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-1.pectra-devnet-ssl-1.yolkie.xyz
@@ -376,6 +420,10 @@ dora:
     name: teku-geth-3
     priority: -1
     archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-4.pectra-devnet-ssl-1.yolkie.xyz
+    name: teku-geth-4
+    priority: -1
+    archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-nethermind-1.pectra-devnet-ssl-1.yolkie.xyz
     name: teku-nethermind-1
     priority: -1
@@ -388,8 +436,8 @@ dora:
     name: teku-nethermind-3
     priority: -1
     archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-nimbusel-1.pectra-devnet-ssl-1.yolkie.xyz
-    name: teku-nimbusel-1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-nethermind-4.pectra-devnet-ssl-1.yolkie.xyz
+    name: teku-nethermind-4
     priority: -1
     archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-reth-1.pectra-devnet-ssl-1.yolkie.xyz
