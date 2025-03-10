@@ -11,9 +11,6 @@ roles:
     version: "4.2.3"
   - name: gantsign.golang
     version: "3.4.0"
-  - name: ethpandaops.general.spamoor
-    src: /Users/minhyuk/Desktop/sunny/ansible-collection-general/roles/spamoor
-    type: file
 
 collections:
   - name: ansible.posix
