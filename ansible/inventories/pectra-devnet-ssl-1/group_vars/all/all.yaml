@@ -149,6 +149,51 @@ xatu_sentry_config_server_auth_user: "{{ secret_xatu_sentry.user }}"
 xatu_sentry_config_server_auth_password: "{{ secret_xatu_sentry.password }}"
 xatu_sentry_config_network_name_override: "{{ ethereum_network_name }}"
 
+xatu_cannon_container_image: "{{ default_tooling_images.xatu_cannon }}"
+xatu_cannon_config_name: "{{ ethereum_network_name }}-{{ inventory_hostname }}"
+xatu_cannon_config_server_address: "{{ secret_xatu_sentry.server_address }}"
+xatu_cannon_config_server_tls_enabled: false
+xatu_cannon_config_beacon_uri: "https://sunnyside:sleepyyolkie@bn.prysm-geth-1.pectra-devnet-ssl-1.yolkie.xyz"
+xatu_cannon_config_server_auth_user: "{{ secret_xatu_sentry.user }}"
+xatu_cannon_config_server_auth_password: "{{ secret_xatu_sentry.password }}"
+xatu_cannon_config_coordinator_address: "{{ secret_xatu_sentry.server_address }}"
+xatu_cannon_config_coordinator_tls_enabled: false
+xatu_cannon_config_coordinator_authorization: "1ff1cb1f94f3a2ff1227c2909fbc4deeefca48bae9e5d7bd4888c900f719351a"
+xatu_cannon_config_network_name_override: "{{ ethereum_network_name }}"
+xatu_cannon_config: |
+  logging: "info"
+  metricsAddr: ":9090"
+  name: "{{ xatu_cannon_config_name }}"
+  ethereum:
+    beaconNodeAddress: {{ xatu_cannon_config_beacon_uri }}
+    overrideNetworkName: {{ xatu_cannon_config_network_name_override }}
+  coordinator:
+    address: {{ xatu_cannon_config_coordinator_address }}
+    tls: {{ xatu_cannon_config_coordinator_tls_enabled }}
+    headers:
+      authorization: "Bearer {{ xatu_cannon_config_coordinator_authorization | b64encode }}"
+  derivers:
+    beaconBlock:
+      iterator:
+        backfill:
+          enabled: true
+    beaconBlobSidecar:
+      iterator:
+        backfill:
+          enabled: true
+    beaconCommittee:
+      iterator:
+        backfill:
+          enabled: true
+  outputs:
+  - name: grpc
+    type: xatu
+    config:
+      address: {{ xatu_cannon_config_server_address }}
+      tls: {{ xatu_cannon_config_server_tls_enabled }}
+      headers:
+        authorization: "Basic {{ (xatu_cannon_config_server_auth_user + ":" + xatu_cannon_config_server_auth_password) | b64encode }}"
+
 # role: ethpandaops.general.ethereum_metrics_exporter
 ethereum_metrics_exporter_container_image: "{{ default_tooling_images.ethereum_metrics_exporter }}"
 ethereum_metrics_exporter_container_volumes: "/etc/ethereum_metrics_exporter:/etc/ethereum_metrics_exporter:ro"

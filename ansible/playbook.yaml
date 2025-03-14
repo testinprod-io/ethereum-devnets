@@ -171,6 +171,12 @@
     - role: ethpandaops.general.generate_basic_auth_nginx
       tags: [docker_nginx_proxy]  
   post_tasks:
+    - name: Restart xatu sentry containers
+      tags: [restart_xatu]
+      community.docker.docker_container:
+        name: "xatu-sentry"
+        state: started
+        restart: true    
     - name: Wait between runs
       tags: [ethereum, ethereum_node]
       ansible.builtin.pause:
@@ -196,6 +202,7 @@
           VIRTUAL_DEST: "/"
           LETSENCRYPT_HOST: "bootnode-1.{{ network_subdomain }}"
     - name: Apply bandwidth limit
+      tags: [apply_bandwidth]
       shell: |
         if [ -z "{{ bandwidth }}" ]; then
           echo "Error: 'bandwidth' variable is not set. Aborting."
@@ -208,12 +215,37 @@
         
         sudo su
         {% raw %}
-        container_id=$(docker inspect execution -f '{{.State.Pid}}')
+        execution_container_id=$(docker inspect execution -f '{{.State.Pid}}')
+        beacon_container_id=$(docker inspect beacon -f '{{.State.Pid}}')
         {% endraw %}
+        
         mkdir -p /var/run/netns
-        ln -sfT /proc/$container_id/ns/net /var/run/netns/execution
+        ln -sfT /proc/$execution_container_id/ns/net /var/run/netns/execution
+        ln -sfT /proc/$beacon_container_id/ns/net /var/run/netns/beacon
+
         ip netns exec execution ip -br -c link
+        ip netns exec beacon ip -br -c link
+
+        tc -n execution qdisc del dev eth0 root
         tc -n execution qdisc add dev eth0 handle 10: root tbf burst 32kbit rate {{ bandwidth }}mbit latency 100ms
+
+        tc -n beacon qdisc del dev eth0 root
+        tc -n beacon qdisc add dev eth0 handle 10: root tbf burst 32kbit rate {{ bandwidth }}mbit latency 100ms
+    - name: Remove bandwidth limit
+      tags: [remove_bandwidth]
+      shell: |
+        if [ -z "{{ bandwidth }}" ]; then
+          echo "Error: 'bandwidth' variable is not set. Aborting."
+          exit
+        fi
+        if [ "{{ bandwidth }}" -eq 0 ]; then
+          echo "Error: 'bandwidth' variable is 0. Aborting."
+          exit
+        fi
+        
+        tc -n execution qdisc del dev eth0 root
+        tc -n beacon qdisc del dev eth0 root
+
 
 - hosts: bootnode
   become: true
@@ -252,6 +284,12 @@
         tx_fuzz_container_name: "{{ tx_fuzz_txs_container_name }}"
         tx_fuzz_container_command: "{{ tx_fuzz_txs_container_command }}"
         tx_fuzz_container_image: "{{ tx_fuzz_txs_container_image }}"
+
+- hosts: bootnode
+  become: true
+  roles:
+    - role: ethpandaops.general.xatu_cannon
+      tags: [xatu_cannon]
 
 # - hosts: spamoor_blobs
 #   become: true

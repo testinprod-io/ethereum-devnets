@@ -19,7 +19,7 @@ ethstats:
             pathType: Prefix
 
   secretEnv:
-    WS_SECRET: "<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.ethstats_secret}>"
+    WS_SECRET: "<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.ethstats_secret}>"
 
   resources:
     requests:

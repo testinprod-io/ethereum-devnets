@@ -7,8 +7,7 @@ tx_fuzz_blobs_container_command:
   - --no-al
   - --rpc=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.bootnode-1.{{ network_subdomain }}
   - --sk={{ tx_fuzz_blobs_privkey }}
-  - --tx_inc=15
-  - --accounts=1
-  - --txcount=50
+  - --accounts_increment_interval=50
+  - --txcount=1
 
 tx_fuzz_container_networks: "{{ docker_networks_shared }}"

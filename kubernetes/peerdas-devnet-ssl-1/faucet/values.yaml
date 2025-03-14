@@ -29,7 +29,7 @@ powfaucet:
   httpProxyCount: 2
 
   faucetTitle: "peerdas-devnet-ssl-1 PoW Faucet"
-  faucetPrivkey: "<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.faucet_private_key}>"
+  faucetPrivkey: "<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.faucet_private_key}>"
   faucetRpcUrl: "http://geth-teku-001:8545"
   faucetExplorerLink: "https://explorer.peerdas-devnet-ssl-1.yolkie.xyz/tx/{txid}"
   faucetTxGasLimit: 100000

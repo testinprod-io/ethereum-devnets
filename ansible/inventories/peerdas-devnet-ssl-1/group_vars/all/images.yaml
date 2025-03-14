@@ -19,7 +19,7 @@ default_ethereum_client_images:
 default_tooling_images:
   xatu_sentry: docker.ethquokkaops.io/dh/ethpandaops/xatu:1.0.25-debian
   ethereum_metrics_exporter: docker.ethquokkaops.io/dh/ethpandaops/ethereum-metrics-exporter:latest
-  tx_fuzz: public.ecr.aws/j7m9g6q8/temporary/tx-fuzz:v0.0.2
+  tx_fuzz: public.ecr.aws/j7m9g6q8/temporary/tx-fuzz:v0.0.11
   forkmon: docker.ethquokkaops.io/dh/skylenet/nodemonitor:darkmode
   forky: docker.ethquokkaops.io/dh/ethpandaops/forky:latest
   fauceth: docker.ethquokkaops.io/dh/skylenet/fauceth:fix_fee_estimation

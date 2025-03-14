@@ -71,7 +71,7 @@ tracoor-single:
             beaconBlocks: 100h
       ethereum:
         config:
-          repository: ethpandaops/pectra-devnets
+          repository: ethpandaops/none-devnets
           branch: master
           path: network-configs/peerdas-devnet-ssl-1/metadata
         tools:
@@ -89,9 +89,9 @@ tracoor-single:
         ethereum:
           overrideNetworkName: peerdas-devnet-ssl-1
           beacon:
-            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.bootnode-1.peerdas-devnet-ssl-1.yolkie.xyz
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.bootnode-1.peerdas-devnet-ssl-1.yolkie.xyz
           execution:
-            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.bootnode-1.peerdas-devnet-ssl-1.yolkie.xyz
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.bootnode-1.peerdas-devnet-ssl-1.yolkie.xyz
             traceDisableMemory: true
             traceDisableStack: true
             traceDisableStorage: true
@@ -99,9 +99,9 @@ tracoor-single:
         ethereum:
           overrideNetworkName: peerdas-devnet-ssl-1
           beacon:
-            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.grandine-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.grandine-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
           execution:
-            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.grandine-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.grandine-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
             traceDisableMemory: true
             traceDisableStack: true
             traceDisableStorage: true
@@ -109,9 +109,9 @@ tracoor-single:
         ethereum:
           overrideNetworkName: peerdas-devnet-ssl-1
           beacon:
-            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
           execution:
-            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
             traceDisableMemory: true
             traceDisableStack: true
             traceDisableStorage: true
@@ -119,9 +119,9 @@ tracoor-single:
         ethereum:
           overrideNetworkName: peerdas-devnet-ssl-1
           beacon:
-            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lodestar-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
           execution:
-            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lodestar-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
             traceDisableMemory: true
             traceDisableStack: true
             traceDisableStorage: true
@@ -129,9 +129,9 @@ tracoor-single:
         ethereum:
           overrideNetworkName: peerdas-devnet-ssl-1
           beacon:
-            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
           execution:
-            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.prysm-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.prysm-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
             traceDisableMemory: true
             traceDisableStack: true
             traceDisableStorage: true
@@ -139,9 +139,9 @@ tracoor-single:
         ethereum:
           overrideNetworkName: peerdas-devnet-ssl-1
           beacon:
-            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.teku-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
           execution:
-            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.teku-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
             traceDisableMemory: true
             traceDisableStack: true
             traceDisableStorage: true

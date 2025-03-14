@@ -29,10 +29,10 @@ testnet-homepage:
     https://notes.ethereum.org/@ethpandaops/peerdas-devnet-ssl-1
 
     ## Ansible setup
-    https://github.com/ethpandaops/pectra-devnets
+    https://github.com/ethpandaops/none-devnets
 
     ## Client versions
-    https://github.com/ethpandaops/pectra-devnets/blob/master/ansible/inventories/peerdas-devnet-ssl-1/group_vars/all/images.yaml
+    https://github.com/ethpandaops/none-devnets/blob/master/ansible/inventories/peerdas-devnet-ssl-1/group_vars/all/images.yaml
 
     ## Validator ranges
     - https://config.peerdas-devnet-ssl-1.yolkie.xyz/api/v1/nodes/validator-ranges
@@ -104,7 +104,7 @@ testnet-homepage:
         ethstatsUrl: https://ethstats.peerdas-devnet-ssl-1.yolkie.xyz
         chainName: "peerdas-devnet-ssl-1"
         chainId: "7093422581"
-        github: https://github.com/ethpandaops/pectra-devnets/tree/master/network-configs/peerdas-devnet-ssl-1/metadata
+        github: https://github.com/ethpandaops/none-devnets/tree/master/network-configs/peerdas-devnet-ssl-1/metadata
       metamask:
         enabled: true
       logo:

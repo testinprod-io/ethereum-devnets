@@ -65,35 +65,35 @@ forky:
           spec:
             seconds_per_slot: 12
             slots_per_epoch: 32
-            genesis_time: 1741430000
+            genesis_time: 1741790000
       sources:
         - name: bootnode-1
           type: "beacon_node"
           config:
-            address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.bootnode-1.peerdas-devnet-ssl-1.yolkie.xyz
+            address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.bootnode-1.peerdas-devnet-ssl-1.yolkie.xyz
             polling_interval: "12s"
         - name: grandine-geth-1
           type: "beacon_node"
           config:
-            address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.grandine-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
+            address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.grandine-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
             polling_interval: "12s"
         - name: lighthouse-geth-1
           type: "beacon_node"
           config:
-            address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
+            address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
             polling_interval: "12s"
         - name: lodestar-geth-1
           type: "beacon_node"
           config:
-            address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lodestar-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
+            address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
             polling_interval: "12s"
         - name: prysm-geth-1
           type: "beacon_node"
           config:
-            address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
+            address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.prysm-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
             polling_interval: "12s"
         - name: teku-geth-1
           type: "beacon_node"
           config:
-            address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
+            address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.teku-geth-1.peerdas-devnet-ssl-1.yolkie.xyz
             polling_interval: "12s"
