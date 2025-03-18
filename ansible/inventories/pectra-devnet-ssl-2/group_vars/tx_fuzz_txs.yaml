@@ -1,4 +1,4 @@
-tx_fuzz_txs_container_image: "{{ default_tooling_images.tx_fuzz }}"
+tx_fuzz_txs_container_image: "docker.ethquokkaops.io/dh/ethpandaops/tx-fuzz:pr-56"
 tx_fuzz_txs_container_name: tx_fuzz_txs
 
 tx_fuzz_txs_container_command:

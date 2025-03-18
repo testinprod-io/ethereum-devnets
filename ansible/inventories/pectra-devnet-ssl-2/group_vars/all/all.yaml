@@ -191,6 +191,7 @@ xatu_cannon_config: |
     config:
       address: {{ xatu_cannon_config_server_address }}
       tls: {{ xatu_cannon_config_server_tls_enabled }}
+      maxExportBatchSize: 256
       headers:
         authorization: "Basic {{ (xatu_cannon_config_server_auth_user + ":" + xatu_cannon_config_server_auth_password) | b64encode }}"
 

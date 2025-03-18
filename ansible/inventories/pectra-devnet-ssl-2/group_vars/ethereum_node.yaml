@@ -9,6 +9,8 @@ ethereum_el_bootnodes:
 ethereum_el_staticpeers: "{{ (groups['all'] | select('ne', inventory_hostname) | map('extract', hostvars, 'ethereum_node_fact_el_enode') | select('defined') | list) | to_json | from_json }}"
 
 # role: ethpandaops.general.prometheus
+prometheus_user: "prometheus"
+prometheus_paths_config: /data/prometheus/etc
 prometheus_remote_push_url: "{{ secret_prometheus_remote_write.endpoint }}"
 prometheus_remote_write_username: "{{ secret_prometheus_remote_write.username }}"
 prometheus_remote_write_password: "{{ secret_prometheus_remote_write.password }}"
