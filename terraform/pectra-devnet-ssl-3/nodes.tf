@@ -45,16 +45,16 @@ variable "xatu" {
 variable "prysm_geth" {
   default = {
     name            = "prysm-geth"
-    count           = 1
+    count           = 7
     validator_start = 0
-    validator_end   = 100
+    validator_end   = 3360
   }
 }
 
 variable "prysm_nethermind" {
   default = {
     name            = "prysm-nethermind"
-    count           = 0
+    count           = 7
     validator_start = 3360
     validator_end   = 6720
   }
@@ -72,7 +72,7 @@ variable "prysm_ethereumjs" {
 variable "prysm_reth" {
   default = {
     name            = "prysm-reth"
-    count           = 0
+    count           = 2
     validator_start = 6720
     validator_end   = 7560
   }
@@ -81,7 +81,7 @@ variable "prysm_reth" {
 variable "prysm_besu" {
   default = {
     name            = "prysm-besu"
-    count           = 0
+    count           = 2
     validator_start = 7560
     validator_end   = 8400
   }
@@ -117,16 +117,16 @@ variable "prysm_nimbusel" {
 variable "lighthouse_geth" {
   default = {
     name            = "lighthouse-geth"
-    count           = 1
-    validator_start = 100
-    validator_end   = 200
+    count           = 7
+    validator_start = 8400
+    validator_end   = 11760
   }
 }
 
 variable "lighthouse_nethermind" {
   default = {
     name            = "lighthouse-nethermind"
-    count           = 0
+    count           = 7
     validator_start = 11760
     validator_end   = 15120
   }
@@ -144,7 +144,7 @@ variable "lighthouse_ethereumjs" {
 variable "lighthouse_reth" {
   default = {
     name            = "lighthouse-reth"
-    count           = 0
+    count           = 2
     validator_start = 15120
     validator_end   = 15960
   }
@@ -153,7 +153,7 @@ variable "lighthouse_reth" {
 variable "lighthouse_besu" {
   default = {
     name            = "lighthouse-besu"
-    count           = 0
+    count           = 2
     validator_start = 15960
     validator_end   = 16800
   }
@@ -189,7 +189,7 @@ variable "lighthouse_nimbusel" {
 variable "teku_geth" {
   default = {
     name            = "teku-geth"
-    count           = 0
+    count           = 4
     validator_start = 16800
     validator_end   = 18720
   }
@@ -198,7 +198,7 @@ variable "teku_geth" {
 variable "teku_nethermind" {
   default = {
     name            = "teku-nethermind"
-    count           = 0
+    count           = 4
     validator_start = 18720
     validator_end   = 20640
   }
@@ -216,7 +216,7 @@ variable "teku_ethereumjs" {
 variable "teku_reth" {
   default = {
     name            = "teku-reth"
-    count           = 0
+    count           = 1
     validator_start = 20640
     validator_end   = 21120
   }
@@ -225,7 +225,7 @@ variable "teku_reth" {
 variable "teku_besu" {
   default = {
     name            = "teku-besu"
-    count           = 0
+    count           = 1
     validator_start = 21120
     validator_end   = 21600
   }
@@ -261,7 +261,7 @@ variable "teku_nimbusel" {
 variable "lodestar_geth" {
   default = {
     name            = "lodestar-geth"
-    count           = 0
+    count           = 2
     validator_start = 21600
     validator_end   = 22560
   }
@@ -270,7 +270,7 @@ variable "lodestar_geth" {
 variable "lodestar_nethermind" {
   default = {
     name            = "lodestar-nethermind"
-    count           = 0
+    count           = 2
     validator_start = 22560
     validator_end   = 23520
   }
@@ -288,7 +288,7 @@ variable "lodestar_ethereumjs" {
 variable "lodestar_reth" {
   default = {
     name            = "lodestar-reth"
-    count           = 0
+    count           = 1
     validator_start = 23520
     validator_end   = 23760
   }
@@ -297,7 +297,7 @@ variable "lodestar_reth" {
 variable "lodestar_besu" {
   default = {
     name            = "lodestar-besu"
-    count           = 0
+    count           = 1
     validator_start = 23760
     validator_end   = 24000
   }
@@ -324,18 +324,18 @@ variable "lodestar_erigonTwo" {
 variable "lodestar_nimbusel" {
   default = {
     name            = "lodestar-nimbusel"
-    count           = 1
-    validator_start = 200
-    validator_end   = 300
+    count           = 0
+    validator_start = 24000
+    validator_end   = 24000
   }
 }
 
 variable "nimbus_geth" {
   default = {
     name            = "nimbus-geth"
-    count           = 1
-    validator_start = 300
-    validator_end   = 400
+    count           = 0
+    validator_start = 24000
+    validator_end   = 24000
   }
 }
 
@@ -432,9 +432,9 @@ variable "grandine_ethereumjs" {
 variable "grandine_reth" {
   default = {
     name            = "grandine-reth"
-    count           = 1
-    validator_start = 400
-    validator_end   = 500
+    count           = 0
+    validator_start = 24000
+    validator_end   = 24000
   }
 }
 
