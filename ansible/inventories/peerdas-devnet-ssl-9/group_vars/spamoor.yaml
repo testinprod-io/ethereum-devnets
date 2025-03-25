@@ -1,0 +1,59 @@
+spamoor_container_image: "public.ecr.aws/j7m9g6q8/temporary/spamoor:v0.0.3"
+
+spamoor_container_command: |
+  blobs
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.bootnode-1.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-geth-1.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-geth-2.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-geth-3.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-geth-4.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-geth-5.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-besu-1.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-besu-2.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-besu-3.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-besu-4.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-besu-5.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-erigon-1.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-erigon-2.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-erigon-3.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-erigon-4.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-erigon-5.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-reth-1.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-reth-2.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-reth-3.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-reth-4.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-reth-5.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-nethermind-1.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-nethermind-2.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-nethermind-3.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-nethermind-4.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-nethermind-5.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-geth-1.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-geth-2.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-geth-3.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-geth-4.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-geth-5.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-besu-1.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-besu-2.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-besu-3.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-besu-4.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-besu-5.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-erigon-1.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-erigon-2.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-erigon-3.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-erigon-4.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-erigon-5.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-reth-1.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-reth-2.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-reth-3.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-reth-4.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-reth-5.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-nethermind-1.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-nethermind-2.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-nethermind-3.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-nethermind-4.{{ network_subdomain }}
+  -h=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.prysm-nethermind-5.{{ network_subdomain }}
+  -p={{ tx_fuzz_txs_privkey }}
+  -t=1
+  --throughput-increment-interval=600
+

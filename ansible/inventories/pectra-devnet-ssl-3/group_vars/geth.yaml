@@ -19,11 +19,12 @@ geth_container_env:
   LETSENCRYPT_HOST: "{{ ethereum_node_rcp_hostname }}"
 geth_container_command_extra_args:
   - --http.api=eth,net,web3,debug,admin,trace
+  - --verbosity=5
   - --http.vhosts=*
   - --state.scheme=path
   - --networkid={{ ethereum_network_id }}
   - --syncmode=full
-  - --bootnodes={{ ethereum_el_staticpeers | join(',') }}
+  - --bootnodes={{ ethereum_el_bootnodes | join(',') }}
   - --ethstats=http:{{ ethstats_secret }}@{{ ethstats_url }}:8083
 geth_init_custom_network: true
 geth_init_custom_network_genesis_file: "{{ eth_testnet_config_dir }}/genesis.json"
