@@ -54,6 +54,9 @@ dora:
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.bootnode-1.peerdas-devnet-ssl-2.yolkie.xyz
     name: bootnode-1
     priority: -1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.grandine-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
+    name: grandine-geth-1
+    priority: -1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
     name: lighthouse-geth-1
     priority: -1
@@ -72,10 +75,6 @@ dora:
     archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-geth-5.peerdas-devnet-ssl-2.yolkie.xyz
     name: lighthouse-geth-5
-    priority: -1
-    archive: true
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-geth-6.peerdas-devnet-ssl-2.yolkie.xyz
-    name: lighthouse-geth-6
     priority: -1
     archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
@@ -130,6 +129,10 @@ dora:
     name: bootnode-1
     priority: -1
     archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.grandine-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
+    name: grandine-geth-1
+    priority: -1
+    archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
     name: lighthouse-geth-1
     priority: -1
@@ -148,10 +151,6 @@ dora:
     archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-5.peerdas-devnet-ssl-2.yolkie.xyz
     name: lighthouse-geth-5
-    priority: -1
-    archive: false
-  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-6.peerdas-devnet-ssl-2.yolkie.xyz
-    name: lighthouse-geth-6
     priority: -1
     archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-1.peerdas-devnet-ssl-2.yolkie.xyz

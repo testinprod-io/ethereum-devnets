@@ -1,0 +1,138 @@
+# Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/forkmon.yaml.j2
+
+forkmon:
+  fullnameOverride: forkmon
+  image:
+    repository: docker.ethquokkaops.io/dh/skylenet/nodemonitor
+    tag: darkmode
+    pullPolicy: IfNotPresent
+  ingress:
+    enabled: true
+    className: ingress-nginx-public
+    hosts:
+      - host: forkmon.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+        paths:
+          - path: /
+            pathType: Prefix
+  network: peerdas-devnet-ssl-lodestar-1
+  endpoints:
+  # Rpc
+  - addr: http://geth-teku-001:8545
+    name: rpc-teku-geth-001
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.bootnode-1.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: bootnode-1
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-1.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-1
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-10.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-10
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-11.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-11
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-12.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-12
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-13.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-13
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-14.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-14
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-15.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-15
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-16.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-16
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-17.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-17
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-18.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-18
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-19.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-19
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-2.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-2
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-20.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-20
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-21.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-21
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-22.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-22
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-23.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-23
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-24.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-24
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-25.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-25
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-26.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-26
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-27.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-27
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-28.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-28
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-29.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-29
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-3.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-3
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-30.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-30
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-31.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-31
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-32.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-32
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-33.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-33
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-34.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-34
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-35.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-35
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-36.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-36
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-37.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-37
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-38.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-38
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-39.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-39
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-4.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-4
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-40.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-40
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-41.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-41
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-42.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-42
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-43.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-43
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-44.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-44
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-45.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-45
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-46.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-46
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-47.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-47
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-48.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-48
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-49.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-49
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-5.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-5
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-50.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-50
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-6.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-6
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-7.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-7
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-8.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-8
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-9.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-9
+
+  config: |
+    # How often to reload data from the nodes
+    reload_interval = "10s"
+    # If specified, a http server will serve static content here
+    server_address = "0.0.0.0:{{ .Values.httpPort}}"
+    # Shown in the document title, if specified
+    chain_name="{{ .Values.network }}"
+    # Local or non third party connection require rpc kind
+    {{- range .Values.endpoints }}
+    [[clients]]
+      url  = {{ .addr | quote }}
+      name = {{ .name | quote }}
+      kind = "rpc"
+    {{- end }}

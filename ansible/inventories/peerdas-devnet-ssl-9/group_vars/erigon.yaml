@@ -27,6 +27,10 @@ erigon_container_command_extra_args:
   - --bootnodes={{ ethereum_el_bootnodes | join(',') }}
   - --staticpeers={{ ethereum_node_el_allnodes | join(',') }}
   - --ethstats={{ inventory_hostname }}:{{ ethstats_secret }}@{{ ethstats_url }}
+  - --txpool.accountslots=100
+  - --txpool.blobslots=100
+  - --txpool.totalblobpoollimit=10000
+  - --txpool.globalslots=100000
 erigon_init_custom_network: true
 erigon_init_custom_network_genesis_file: "{{ eth_testnet_config_dir }}/genesis.json"
 

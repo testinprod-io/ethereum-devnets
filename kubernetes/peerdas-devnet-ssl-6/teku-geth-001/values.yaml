@@ -1,0 +1,226 @@
+# Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/ethereum-node.yaml.j2
+
+teku-geth-001:
+  global:
+    main:
+      network: peerdas-devnet-ssl-6
+      engineEndpoint: http://geth-teku-001:8551
+      rpcEndpoint: http://geth-teku-001:8545
+      beaconEndpoint: http://teku-geth-001:5052
+    checkpointSync:
+      enabled: false
+      addresses:
+        peerdas-devnet-ssl-6: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.peerdas-devnets.node_ingress.combined}>@bn.lighthouse-geth-1.peerdas-devnet-ssl-6.yolkie.xyz
+    clientArgs:
+      networks:
+        peerdas-devnet-ssl-6:
+          execution:
+            besu:
+            nethermind:
+            geth:
+              - --http.api=eth,net,web3,debug,admin
+              - --http.vhosts=*
+              - --networkid=7010681278
+              - --syncmode=full
+              - --bootnodes=enode://c8330374a2c4857006753431f8c1fdaddad037c298b49e456b048ef1a227f8bae33c99302f70307995d87fd6b6b68829372c378af4d11a3e52beefdda8964f35@192.241.159.92:30303?discport=30303,enode://91cbc69316c309fffc7b808aeff6b281c89ea6d581f989b4181ec505756a3bf151ddb07f608488c2bec04424507b900815d945a895f800b01aa862ea3bd08ca8@143.198.163.113:30303?discport=30303,enode://2d73c204d838f683ccf38b44bb1fa68603fe9a8bc406a393608ded71941117d64645a6d3c39de21e2780f66b393b2659dc5d7617a915cf98ec6edaa88dd53efd@174.138.87.43:30303?discport=30303,enode://bda652b298bdf3067b9c2ec3aca938aead8c1c1dce16f14237bbc8be0ac029f6ba586f12dbdb37ff20f49e91f082edf6eeaadcab3839b705d8604c12a45ae959@165.22.203.77:30303?discport=30303,enode://17f3d0cf48f79ab6ad5d42080bfc48ed83f31b0b2e8e53087db31e7c31b2545c5e07a463b5f6e8aceefb8e33acf92da1b1fd316e19fdeb9df369c3ff6e587a9c@134.209.254.137:30303?discport=30303,enode://ef16dc18c964aee1f189c05798b71dd942700bc96821e7986be8938367c4c9eb9f19cc41bfe3fa593328c0bb6e31c4cd837585a0974d11156fd8e726e2f4739f@143.110.211.206:30303?discport=30303,enode://a9763b2b12ebdd92f708c0d9dc560df382e89d78b4d4387f8514103333e26a45c8ae54b39d4028ec7b533931649e2114da9b865a612b778cbcdb5117287a248d@128.199.14.76:30303?discport=30303,enode://0270ad0f9a4e7ca48ec2d3621cb26a7dcdb27bddc0a9e734761fb72c0fed736e15887f90d8b8be5b92fdfd2dcb2ded22242f8ca4025898a8b0a8153b9ddfe5e3@137.184.141.93:30303?discport=30303,enode://9dfb27464303cdb5f827081379b01c3dacb00da1fb56c5339e27a5a7b3063a3e026057529dbe48a6e37ba558c24ad2d9e36c28692dda67131f007b569ff29026@104.248.172.237:30303?discport=30303,enode://16b4f95f284ad2c3edaaaf19a5161c4a911c3aae5d8ad7467b67dd21994ac24750a18aea7f0f4fc2b4267abed86c335e4398c457afa04f5ddb67a42ed7d32f63@159.203.140.146:30303?discport=30303,enode://f4360871612e692e34c7f00681df7bab822be9b22234d5b3d6d0675b53181f3e0a02ea1eb4bcb7c73eca65c9df5aedc1cfdc126edeea90ad6eb2fddac4299a6c@159.223.4.88:30303?discport=30303,enode://5dfcc9fc661adc67b72600fe63f32846f919e46239ab977398490ae5874abede44d56532f8205b46fcfe34a2fc6331af768975e1021c2a9e82dbd48d14deee27@188.166.162.183:30303?discport=30303,enode://cb0a895670f7bb9979a5ad565b2b6d8af21f1c71187c0e979619f0ce78fb45e89c222f456b2b5118d362dd2970e9c8f890eba3dbe421e39c3b1ea0f3ed5d6a74@104.248.162.202:30303?discport=30303,enode://ab31af4a323a54c1b502458f33ea60c66bab61abcc798b434828e1eba63d4a8aea179a5488aa4f22293bf301787c15ec6444a8f16467529f5cfd1e1e046edb76@167.99.177.164:30303?discport=30303,enode://a92b404a76cbe58030f07bc560803ffa610f05b273f85bcb8830976f20c503dd8546e2eb659b7f705e73712b19f3c215397b8e3cc54d5ac0cbd2703702ac2cac@143.110.224.142:30303?discport=30303,enode://ff6f861bbc1b9ab4f317c3d5c8b27e9f547f841edfd1531965df6b5957c174d984c57a01dfdbd0b710fd7d79b0ce7b4e2df385c3bdd0fc8ce809d1c708dad5e0@67.205.156.70:30303?discport=30303,enode://2d0799f6883056255844d46738f01fd1b2278e9a420ec8ae52bfe5dae8b29b4c4e4e8e8c47607bcb8a6918e0b70dac36ffad61619f2b8d0505406033b64c578e@165.227.238.203:30303?discport=30303,enode://052040b810467359f9def75142839d06716fcec288db3a50f73632111d12d05cd57cdd851b5a22312426b7d8f989f02369cd3ee4d949318c838e07a4bcaa8b66@138.197.36.77:30303?discport=30303,enode://6e0070524726e720b0d776de8e901c92f2f0ff1a3dbd224defe8b1b5e1b2a3c68ba730af52142cee9bd6f9b0c878fdfc4fb1039ae27054cd80ce0ad67e2e2444@146.190.30.49:30303?discport=30303,enode://82582d7df9c28a2386ced92fb4ac9f63f11716c9a05799fc6d1bdc29690deb306823c970cde6b565803dc3e56883b2ad2400f251f7c1c8deb66804de4cf99dae@174.138.87.191:30303?discport=30303,enode://d60248a076eaf26e9272588c543639d36c1e1e82974b2d18619e91f57030e835b2cfd896e7576061d92cbb3a7086e8d12e914931b9d3d0291145acfa801bdff9@159.223.15.39:30303?discport=30303,enode://102afa9fb5039372f3ad20410ec0c82df5033a64e7ca5836fd2f80af61bfe85e02ad632aac9fd4842090a7607ef2e70ff5b12f22340e70c35e0760e544b18203@178.128.203.124:30303?discport=30303,enode://8672f52f5ebd20da24bb32d4d9775b70cca0b89bf42d9b5b8bcd55948515ae59aa89afe34f53d1393061632187a6068e732d5cdb3de766c72ae558fe3979f24c@143.198.38.61:30303?discport=30303,enode://a73aded190ef81a37c7c9fff6f3f3a10ea2fd3e82ea77aba3b8fae04bc96e82360289966230d69b4b0f3c2c3e04d95b0ffa2e06e3cb18d4e0cf78bf6a78173b3@64.23.243.139:30303?discport=30303,enode://eb875bda6839069646daf781a65e858542c2b2035dc1652711707e6e550daae049231cfb29ac840e730174b71eca4d8ee77255689bbd7dd823df1a20e2b2a3a9@67.205.184.144:30303?discport=30303,enode://ef4c83e6eaf386374844447de214f104e3cbda2c33afcaa24dac14ad094879a6110bd4ac4ff9485ab68b5fb5fa9543c69076bb0e5adaba4ba97fc3df74e2cb39@165.232.103.10:30303?discport=30303,enode://93b054d7d44b1043ad3a148d0c8fc0454e276fe5da47d873dcf99bfaaf3a31a6186ea8b93084c0306d5c806950d15334f62b1524c14f3daa19081d3133cf18b7@157.230.59.69:30303?discport=30303,enode://d80322a963a43e7e7714d0acd0228060d148d1acd072d45529b6c0da1c619c1d7ea41f71c046e401e642cbb6d5ecdf107641a1c905c0cd7e63efb704d848d114@167.71.83.98:30303?discport=30303,enode://915feb5744c124c6e3ed8c57c680d522b8688e9640d8cf147094226e9581717484d18bf0fe5389e15f5372667bf2d8aff9a88e49a5d3fa5c11167ecaf08a38ce@159.223.12.175:30303?discport=30303,enode://60308070f62da1b88ac775ed8a17e4d21ec3053e3d1733bd8a90cc1df9dfa4a53477ccba86c3bb51f4e5aeca7cbce8a2e5046279a5eb83f93088dbe8805d56ed@164.90.162.30:30303?discport=30303,enode://1dd4ab4542d88a3f7fb53e6d302f7838b16f524e1e717fdf5959f62ced23ad30400ce026e2591598e81e6e636491a909a69d84925ce3c2bfa2d2c93b1a6d40d5@165.227.38.203:30303?discport=30303,enode://73745c25f86adce49aa8a8218a7765caf0920e0d64e9f45cfac6ed664a4f0723cd60fccab7f8c9262e4435ecc003f00f49115adb08035f4f4ddda5754474fec4@143.244.177.1:30303?discport=30303,enode://9daf282351a77f323e18b306906ff4bbfcb1dd62ca401802e053f36ccfabc1400a62c0ce34ddb5679ae8e0b8cc328def6c7b5bce6f70cd3e5c17b9fa8dbeaf5e@147.182.176.160:30303?discport=30303,enode://f3db9e8ec69742c49d4d809268b5c831c26d7eb9b9860924d51cbe00c30f43ddfb49a181bdbcbabb5570f6acee708003efab931e1f10f625d64d59669832eea6@134.209.176.146:30303?discport=30303,enode://5df76aabfb8ab5319c3bf95709cccb088ba801d96e2536a2943125182c15a4e1bbbcdfa9fb2707e9daf9b45ecf2d82a61cc51d4dc4cdd1742f1d9dbc42c74184@159.65.162.115:30303?discport=30303,enode://adc9da41ba5f3ab63edc9c71885e25bfc304436551c537ae7744d33c851124160150005ba35cb45eff1fc9186562f090d3f32708f864d6a558717de89bb64eb9@188.166.77.179:30303?discport=30303,enode://f238143763cb135ff0b59cc921621ba3bb54c6693264457e0f04135e9a4ff606d07b073a36af5f10baf19ac925341f16e37db5c4466cef60616e6435aff84a37@165.22.70.16:30303?discport=30303,enode://b290984b48b4c7610b7f85f2575ab74879646fd1a7a21b2289f2fbc086e782c1a238d6b91ce27248aa1054d3b869289a9421e8f21d0590fd5d4c470b37d337ac@134.122.102.69:30303?discport=30303,enode://c648c2ac3150ddbcd7c1296bd1f423d625f6d4292979dba1eed507516d6d344edbbff7f056ac8115de26e238f7fe59956e8ca7d26615aff096ff772f9fb9db42@68.183.200.141:30303?discport=30303,enode://c0443f1eadf151a140f7bf00263b60b2b8c2f8c1f35a3a55676f1a4bf342d2792ae24370689da5577abe33006044065b59ee0ec95cc7352cd71260ce086a8c32@64.23.248.204:30303?discport=30303,enode://bb2eb97860679db7e014b243814251a60220059fdff5e5d92a88dd0ffcbf1493169ffa240b9bec4c55c3264d00b3472427d70a2f9d24eaf0268f8f1133c0bca5@137.184.79.106:30303?discport=30303,enode://aa8fb4fac2f488b3e1dcb0053fec33230a01cf46314b789d36039f7f3fca3852ca5ebdb16c96d34627551c82aa2f992178ea3f7ed3f813280830f342f3799682@64.227.37.86:30303?discport=30303,enode://aed94dd0105690349d360a34582466a077b0acbd5c24cdfae0b977c3e2a655d23f39056eb62d230f6d29d8bb271a6b0beea74bc0f40685fd45de56c6a4372e16@167.172.240.44:30303?discport=30303,enode://5a98c3a318b52118f5c41df38ba66fa207f1eb268fc21d992deff7083f41a8eb137d82285810f4e3a09ff71bd1e7c4c9884dfffcd65d578141251ab7af409af3@164.90.205.68:30303?discport=30303,enode://57a27734a69574dbce8713ae4f7f5ba39581cb904fac05a3a0efc7a1ebcb09082d27420cd5e9ab13f521ad860ac3db774ad3f64eeaa4319ffa97509715c53e1a@167.71.110.83:30303?discport=30303,enode://a587f05c5158bdcc0e6406ffede651f83bb0b2cdba022cd0b94ff2eb667bfe183fc4ecbfdb3983a4a149446a2c49562fa5c398bf743e22a0254512fb3ae36ff7@161.35.87.42:30303?discport=30303,enode://30654a4b697934bfb6fad1e3b9b346dd6b59b9057937aed7d73158f6bada0d45bcbb41304ce93d69237a2b9b9fa9581256cc76d0d7ef3e6ef0d86a235bd0d81d@134.122.80.19:30303?discport=30303,enode://a2e9d9fccbd44cb784da3ff21a6bf9026d687c4e8e432b4dee3e70229137b07f1b6aa1235dbdeebce9c75498980690ac88fb1bf80649e5125a6500ddca16d9b8@146.190.251.93:30303?discport=30303,enode://6c307d51a31a565847250d1b3f360c410ee05580706e486629427cd2a84d382daa83d6a35ee80971b417f333fb0eab0df23753c48f0a1304856073cd3e62d53b@146.190.127.87:30303?discport=30303,enode://2886f894aad9103ac23d37c82ae2e4d9b301b0542f674fc2b9843772ff995205187329ea2fac6ab07a1edfa6ee658df11caf0f55341fbd4d9465bcbc36dde519@142.93.113.205:30303?discport=30303,enode://f8ff39d7861328a58021866e3e888ce8e4a06b625027410be322d03407241ccec9e15d7b85b5e3b5ec6ed4c2fa804b6c4cd97a79994a35e2cc22025ba2199903@159.65.82.124:30303?discport=30303
+              - --ethstats=k8s-teku-geth-001:<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.ethstats_secret}>@ethstats.peerdas-devnet-ssl-6.yolkie.xyz
+              - --rpc.allow-unprotected-txs
+            erigon:
+            ethereumjs:
+          consensus:
+            lodestar:
+              - --paramsFile=/data/network-config/config.yaml
+              - --genesisStateFile=/data/network-config/genesis.ssz
+              - --bootnodes=enr:-Iq4QD22CC6LIBFh8pzpEDLPqYMpmHpXFOPgTBYofmjKJmskNUHuhPZTS62qasyEts0Hl2NMzRNVK5JdqtSijDHxz4uGAZWxw_zNgmlkgnY0gmlwhMDxn1yJc2VjcDI1NmsxoQJtuukir45CAVRyhmqJKcRS2934t-LXmAxJ-k6iZONGlYN1ZHCCIzI,enr:-Oq4QBQAaC15MJfVUn1Vbs_R-JbrYZdtw_1_TCh3WMg6rRwCVvGxKigge1eskhAzU0IhYgPnmZ1BCwkzpVNqijwqd1wDh2F0dG5ldHOIAAMAAAAAAACDY2djgYCGY2xpZW502IpMaWdodGhvdXNljDcuMC4wLWJldGEuMIRldGgykC2Woe9gEFMiAQAAAAAAAACCaWSCdjSCaXCEwPGfXIRxdWljgiMpiXNlY3AyNTZrMaED7M-36y3oEDIKfZssxYCFd-qTxCqU-3FEYNbk39-5Ay2Ic3luY25ldHMAg3RjcIIjKIN1ZHCCIyg
+              - --rest.namespace="*"
+              - --network.connectToDiscv5Bootnodes
+              - --nat=true
+              - --persistNetworkIdentity
+              - --logLevel=debug
+            teku:
+              - --network=/data/network-config/config.yaml
+              - --genesis-state=/data/network-config/genesis.ssz
+              - --p2p-discovery-bootnodes=enr:-Iq4QD22CC6LIBFh8pzpEDLPqYMpmHpXFOPgTBYofmjKJmskNUHuhPZTS62qasyEts0Hl2NMzRNVK5JdqtSijDHxz4uGAZWxw_zNgmlkgnY0gmlwhMDxn1yJc2VjcDI1NmsxoQJtuukir45CAVRyhmqJKcRS2934t-LXmAxJ-k6iZONGlYN1ZHCCIzI,enr:-Oq4QBQAaC15MJfVUn1Vbs_R-JbrYZdtw_1_TCh3WMg6rRwCVvGxKigge1eskhAzU0IhYgPnmZ1BCwkzpVNqijwqd1wDh2F0dG5ldHOIAAMAAAAAAACDY2djgYCGY2xpZW502IpMaWdodGhvdXNljDcuMC4wLWJldGEuMIRldGgykC2Woe9gEFMiAQAAAAAAAACCaWSCdjSCaXCEwPGfXIRxdWljgiMpiXNlY3AyNTZrMaED7M-36y3oEDIKfZssxYCFd-qTxCqU-3FEYNbk39-5Ay2Ic3luY25ldHMAg3RjcIIjKIN1ZHCCIyg
+              - --p2p-peer-upper-bound=100
+              - --data-storage-non-canonical-blocks-enabled=true
+              - --data-storage-mode=PRUNE
+              - --logging=info
+              - --Xlog-include-p2p-warnings-enabled
+              - --metrics-block-timing-tracking-enabled
+              - --ignore-weak-subjectivity-period-enabled
+              - --rest-api-docs-enabled
+            prysm:
+              - --grpc-gateway-corsdomain=*
+              - --chain-config-file=/data/network-config/config.yaml
+              - --genesis-state=/data/network-config/genesis.ssz
+              - --contract-deployment-block=0
+              - --min-sync-peers=1
+              - --pprof
+              - --enable-debug-rpc-endpoints
+              - --verbosity=debug
+              - --minimum-peers-per-subnet=1
+              - --bootstrap-node=enr:-Iq4QD22CC6LIBFh8pzpEDLPqYMpmHpXFOPgTBYofmjKJmskNUHuhPZTS62qasyEts0Hl2NMzRNVK5JdqtSijDHxz4uGAZWxw_zNgmlkgnY0gmlwhMDxn1yJc2VjcDI1NmsxoQJtuukir45CAVRyhmqJKcRS2934t-LXmAxJ-k6iZONGlYN1ZHCCIzI
+              - --bootstrap-node=enr:-Oq4QBQAaC15MJfVUn1Vbs_R-JbrYZdtw_1_TCh3WMg6rRwCVvGxKigge1eskhAzU0IhYgPnmZ1BCwkzpVNqijwqd1wDh2F0dG5ldHOIAAMAAAAAAACDY2djgYCGY2xpZW502IpMaWdodGhvdXNljDcuMC4wLWJldGEuMIRldGgykC2Woe9gEFMiAQAAAAAAAACCaWSCdjSCaXCEwPGfXIRxdWljgiMpiXNlY3AyNTZrMaED7M-36y3oEDIKfZssxYCFd-qTxCqU-3FEYNbk39-5Ay2Ic3luY25ldHMAg3RjcIIjKIN1ZHCCIyg
+            lighthouse:
+              - --testnet-dir=/data/network-config
+              - --boot-nodes=enr:-Iq4QD22CC6LIBFh8pzpEDLPqYMpmHpXFOPgTBYofmjKJmskNUHuhPZTS62qasyEts0Hl2NMzRNVK5JdqtSijDHxz4uGAZWxw_zNgmlkgnY0gmlwhMDxn1yJc2VjcDI1NmsxoQJtuukir45CAVRyhmqJKcRS2934t-LXmAxJ-k6iZONGlYN1ZHCCIzI,enr:-Oq4QBQAaC15MJfVUn1Vbs_R-JbrYZdtw_1_TCh3WMg6rRwCVvGxKigge1eskhAzU0IhYgPnmZ1BCwkzpVNqijwqd1wDh2F0dG5ldHOIAAMAAAAAAACDY2djgYCGY2xpZW502IpMaWdodGhvdXNljDcuMC4wLWJldGEuMIRldGgykC2Woe9gEFMiAQAAAAAAAACCaWSCdjSCaXCEwPGfXIRxdWljgiMpiXNlY3AyNTZrMaED7M-36y3oEDIKfZssxYCFd-qTxCqU-3FEYNbk39-5Ay2Ic3luY25ldHMAg3RjcIIjKIN1ZHCCIyg
+              - --allow-insecure-genesis-sync
+            nimbus:
+              - --network=/data/network-config
+              - --validator-monitor-auto=false
+              - --doppelganger-detection=off
+              - --light-client-data-serve=false
+              - --debug-peerdas-supernode=true
+              - --sync-light-client=no
+              - --bootstrap-node=enr:-Iq4QD22CC6LIBFh8pzpEDLPqYMpmHpXFOPgTBYofmjKJmskNUHuhPZTS62qasyEts0Hl2NMzRNVK5JdqtSijDHxz4uGAZWxw_zNgmlkgnY0gmlwhMDxn1yJc2VjcDI1NmsxoQJtuukir45CAVRyhmqJKcRS2934t-LXmAxJ-k6iZONGlYN1ZHCCIzI
+              - --bootstrap-node=enr:-Oq4QBQAaC15MJfVUn1Vbs_R-JbrYZdtw_1_TCh3WMg6rRwCVvGxKigge1eskhAzU0IhYgPnmZ1BCwkzpVNqijwqd1wDh2F0dG5ldHOIAAMAAAAAAACDY2djgYCGY2xpZW502IpMaWdodGhvdXNljDcuMC4wLWJldGEuMIRldGgykC2Woe9gEFMiAQAAAAAAAACCaWSCdjSCaXCEwPGfXIRxdWljgiMpiXNlY3AyNTZrMaED7M-36y3oEDIKfZssxYCFd-qTxCqU-3FEYNbk39-5Ay2Ic3luY25ldHMAg3RjcIIjKIN1ZHCCIyg
+
+
+  geth:
+    enabled: true
+    fullnameOverride: geth-teku-001
+    image:
+      repository: docker.ethquokkaops.io/dh/ethpandaops/geth
+      tag: eof-devnet-0
+      pullPolicy: Always
+    p2pNodePort:
+      enabled: true
+      port: 31005
+    persistence:
+      enabled: true
+      size: 100Gi
+    podLabels:
+      network: peerdas-devnet-ssl-6
+      testnet: peerdas-devnet-ssl-6
+      ethereum_network: peerdas-devnet-ssl-6
+      ethereum_role: execution
+      consensus_client: teku
+      execution_client: geth
+      ethereum_instance: geth-teku-001
+    resources:
+      requests:
+        cpu: 2000m
+        memory: 5Gi
+      limits:
+        cpu: 3000m
+        memory: 7Gi
+    initContainers:
+      - name: init-config
+        image: alpine:latest
+        imagePullPolicy: IfNotPresent
+        securityContext:
+          runAsNonRoot: false
+          runAsUser: 0
+        command:
+          - sh
+          - -ace
+          - >
+            CHAINSPEC_URI=https://config.peerdas-devnet-ssl-6.yolkie.xyz/el/chainspec.json;
+            GENESIS_URI=https://config.peerdas-devnet-ssl-6.yolkie.xyz/el/genesis.json;
+            BESU_GENESIS_URI=https://config.peerdas-devnet-ssl-6.yolkie.xyz/el/besu.json;
+            ENODES_URI=https://config.peerdas-devnet-ssl-6.yolkie.xyz/el/enodes.txt;
+            mkdir -p /data/network-config;
+            if ! [ -f /data/network_config_init_done ];
+            then
+              apk update && apk add curl jq;
+              wget -O /data/network-config/chainspec.json $CHAINSPEC_URI;
+              wget -O /data/network-config/genesis.json $GENESIS_URI;
+              wget -O /data/network-config/besu.json $BESU_GENESIS_URI;
+              wget -O /data/network-config/enodes.txt $ENODES_URI;
+              cat /data/network-config/genesis.json | jq -r '.config.chainId' > /data/network-config/chainid.txt;
+              touch /data/network_config_init_done;
+              echo "network config init done";
+            else
+              echo "network config already present";
+            fi;
+            echo "bootnode init done: $(cat /data/network-config/enodes.txt)";
+        volumeMounts:
+          - name: storage
+            mountPath: "/data"
+      - name: init-genesis
+        image: docker.ethquokkaops.io/dh/ethpandaops/geth:eof-devnet-0
+        imagePullPolicy: Always
+        securityContext:
+          runAsNonRoot: false
+          runAsUser: 0
+        command:
+          - sh
+          - -ace
+          - >
+            if ! [ -f /data/genesis_init_done ];
+            then
+              geth init --datadir /data /data/network-config/genesis.json;
+              touch /data/genesis_init_done;
+              echo "genesis init done";
+            else
+              echo "genesis is already initialized";
+            fi;
+        volumeMounts:
+          - name: storage
+            mountPath: "/data"
+
+  teku:
+    enabled: true
+    fullnameOverride: teku-geth-001
+    image:
+      repository: docker.ethquokkaops.io/dh/ethpandaops/teku
+      tag: nashatyrev-das-7109573
+      pullPolicy: Always
+    mode: "beacon"
+    p2pNodePort:
+      enabled: true
+      port: 32005
+    podLabels:
+      network: peerdas-devnet-ssl-6
+      testnet: peerdas-devnet-ssl-6
+      ethereum_network: peerdas-devnet-ssl-6
+      ethereum_role: consensus
+      consensus_client: teku
+      execution_client: geth
+      ethereum_instance: teku-geth-001
+    resources:
+      requests:
+        cpu: 2000m
+        memory: 5Gi
+      limits:
+        cpu: 3000m
+        memory: 7Gi
+    persistence:
+      enabled: true
+      size: 200Gi
+    initContainers:
+    - name: init-genesis
+      image: alpine:latest
+      imagePullPolicy: IfNotPresent
+      securityContext:
+        runAsNonRoot: false
+        runAsUser: 0
+      command:
+        - sh
+        - -ace
+        - >
+          apk add jq curl sed;
+          DEPOSIT_CONTRACT_URI=https://config.peerdas-devnet-ssl-6.yolkie.xyz/cl/deposit_contract.txt;
+          DEPOSIT_CONTRACT_BLOCK_URI=https://config.peerdas-devnet-ssl-6.yolkie.xyz/cl/deposit_contract_block.txt;
+          DEPOSIT_CONTRACT_BLOCK_HASH_URI=https://config.peerdas-devnet-ssl-6.yolkie.xyz/cl/deposit_contract_block_hash.txt;
+          GENESIS_CONFIG_URI=https://config.peerdas-devnet-ssl-6.yolkie.xyz/cl/config.yaml;
+          GENESIS_SSZ_URI=https://config.peerdas-devnet-ssl-6.yolkie.xyz/cl/genesis.ssz;
+          mkdir -p /data/network-config;
+          curl -s https://config.peerdas-devnet-ssl-6.yolkie.xyz/api/v1/nodes/inventory | jq -r '.ethereum_pairs[] | .consensus.enr' > /data/network-config/bootstrap_nodes.txt;
+          if ! [ -f /data/network-config/genesis.ssz ];
+          then
+            wget -O /data/network-config/deposit_contract.txt $DEPOSIT_CONTRACT_URI;
+            wget -O /data/network-config/deposit_contract_block.txt $DEPOSIT_CONTRACT_BLOCK_URI;
+            wget -O /data/network-config/deposit_contract_block_hash.txt $DEPOSIT_CONTRACT_BLOCK_HASH_URI;
+            wget -O /data/network-config/config.yaml $GENESIS_CONFIG_URI;
+            wget -O /data/network-config/genesis.ssz $GENESIS_SSZ_URI;
+            echo "genesis init done";
+          else
+            echo "genesis exists. skipping...";
+          fi;
+          (tr '\n' ',' < /data/network-config/bootstrap_nodes.txt | sed 's/[^,]*/"&"/g') > /data/network-config/bootstrap_nodes2.txt;
+          mv /data/network-config/bootstrap_nodes2.txt /data/network-config/bootstrap_nodes.txt;
+          echo "bootnode init done: $(cat /data/network-config/bootstrap_nodes.txt)";
+      volumeMounts:
+        - name: storage
+          mountPath: "/data"

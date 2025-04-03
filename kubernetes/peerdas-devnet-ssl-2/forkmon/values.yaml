@@ -21,6 +21,8 @@ forkmon:
     name: rpc-teku-geth-001
   - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.bootnode-1.peerdas-devnet-ssl-2.yolkie.xyz
     name: bootnode-1
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.grandine-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
+    name: grandine-geth-1
   - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
     name: lighthouse-geth-1
   - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-2.peerdas-devnet-ssl-2.yolkie.xyz
@@ -31,8 +33,6 @@ forkmon:
     name: lighthouse-geth-4
   - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-5.peerdas-devnet-ssl-2.yolkie.xyz
     name: lighthouse-geth-5
-  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-6.peerdas-devnet-ssl-2.yolkie.xyz
-    name: lighthouse-geth-6
   - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
     name: lodestar-geth-1
   - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-2.peerdas-devnet-ssl-2.yolkie.xyz

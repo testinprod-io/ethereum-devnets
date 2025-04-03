@@ -51,6 +51,9 @@ checkpointz:
         - name: bootnode-1
           address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.bootnode-1.peerdas-devnet-ssl-2.yolkie.xyz
           dataProvider: true
+        - name: grandine-geth-1
+          address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.grandine-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
+          dataProvider: true
         - name: lighthouse-geth-1
           address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
           dataProvider: true

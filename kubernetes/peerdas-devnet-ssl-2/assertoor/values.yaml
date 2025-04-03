@@ -44,6 +44,9 @@ assertoor:
     - name:  bootnode-1
       executionUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.bootnode-1.peerdas-devnet-ssl-2.yolkie.xyz
       consensusUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.bootnode-1.peerdas-devnet-ssl-2.yolkie.xyz
+    - name:  grandine-geth-1
+      executionUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.grandine-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
+      consensusUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.grandine-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
     - name:  lighthouse-geth-1
       executionUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
       consensusUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
@@ -59,9 +62,6 @@ assertoor:
     - name:  lighthouse-geth-5
       executionUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-5.peerdas-devnet-ssl-2.yolkie.xyz
       consensusUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-geth-5.peerdas-devnet-ssl-2.yolkie.xyz
-    - name:  lighthouse-geth-6
-      executionUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-geth-6.peerdas-devnet-ssl-2.yolkie.xyz
-      consensusUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-geth-6.peerdas-devnet-ssl-2.yolkie.xyz
     - name:  lodestar-geth-1
       executionUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lodestar-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
       consensusUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
@@ -110,12 +110,12 @@ assertoor:
     walletPrivkey: "<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.assertoor_private_key}>"
     clientPairNames:
       - bootnode-1
+      - grandine-geth-1
       - lighthouse-geth-1
       - lighthouse-geth-2
       - lighthouse-geth-3
       - lighthouse-geth-4
       - lighthouse-geth-5
-      - lighthouse-geth-6
       - lodestar-geth-1
       - lodestar-geth-2
       - lodestar-geth-3
@@ -131,11 +131,11 @@ assertoor:
       - teku-geth-4
       - teku-geth-5
     validatorPairNames:
+      - grandine-geth-1
       - lighthouse-geth-2
       - lighthouse-geth-3
       - lighthouse-geth-4
       - lighthouse-geth-5
-      - lighthouse-geth-6
       - lodestar-geth-1
       - lodestar-geth-2
       - lodestar-geth-3

@@ -95,6 +95,16 @@ tracoor-single:
             traceDisableMemory: true
             traceDisableStack: true
             traceDisableStorage: true
+      - name: grandine-geth-1
+        ethereum:
+          overrideNetworkName: peerdas-devnet-ssl-2
+          beacon:
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.grandine-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
+          execution:
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.grandine-geth-1.peerdas-devnet-ssl-2.yolkie.xyz
+            traceDisableMemory: true
+            traceDisableStack: true
+            traceDisableStorage: true
       - name: lighthouse-geth-1
         ethereum:
           overrideNetworkName: peerdas-devnet-ssl-2

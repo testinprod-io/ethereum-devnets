@@ -201,6 +201,14 @@
           VIRTUAL_PATH: "/meta/api"
           VIRTUAL_DEST: "/"
           LETSENCRYPT_HOST: "bootnode-1.{{ network_subdomain }}"
+    - name: Create prometheus config
+      tags: [apply_bandwidth]
+      ansible.builtin.copy:
+        content: "{{ prometheus_config }}"
+        dest: "{{ prometheus_paths_config }}/prometheus.yml"
+        owner: "{{ prometheus_user }}"
+        group: "{{ prometheus_user }}"
+        mode: '0664'
     - name: Apply bandwidth limit
       tags: [apply_bandwidth]
       shell: |
@@ -231,6 +239,8 @@
 
         tc -n beacon qdisc del dev eth0 root
         tc -n beacon qdisc add dev eth0 handle 10: root tbf burst 32kbit rate {{ bandwidth }}mbit latency 100ms
+        docker restart ethereum-metrics-exporter prometheus
+  
     - name: Remove bandwidth limit
       tags: [remove_bandwidth]
       shell: |
@@ -291,14 +301,11 @@
     - role: ethpandaops.general.xatu_cannon
       tags: [xatu_cannon]
 
-# - hosts: spamoor_blobs
-#   become: true
-#   roles:
-#     - role: spamoor
-#       tags: [spamoor, spamoor_blobs]
-#       vars:
-#         spamoor_container_name: "{{ spamoor_blobs_container_name }}"
-#         spamoor_container_image: "{{ spamoor_blobs_container_image }}"
+- hosts: spamoor
+  become: true
+  roles:
+    - role: spamoor
+      tags: [spamoor]
 
 - hosts: goomy
   become: true

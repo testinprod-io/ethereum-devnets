@@ -3,4 +3,4 @@ dependencies:
   repository: https://ethpandaops.github.io/general-helm-charts
   version: 0.0.2
 digest: sha256:cf07959dab9b0913b5c5c8817b31583220e1f617a0b98432171d221f8e4db4d9
-generated: "2025-03-13T22:56:56.794285+09:00"
+generated: "2025-03-15T13:13:11.990864+09:00"

@@ -1,0 +1,138 @@
+# Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/forkmon.yaml.j2
+
+forkmon:
+  fullnameOverride: forkmon
+  image:
+    repository: docker.ethquokkaops.io/dh/skylenet/nodemonitor
+    tag: darkmode
+    pullPolicy: IfNotPresent
+  ingress:
+    enabled: true
+    className: ingress-nginx-public
+    hosts:
+      - host: forkmon.peerdas-devnet-ssl-teku-1.yolkie.xyz
+        paths:
+          - path: /
+            pathType: Prefix
+  network: peerdas-devnet-ssl-teku-1
+  endpoints:
+  # Rpc
+  - addr: http://geth-teku-001:8545
+    name: rpc-teku-geth-001
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.bootnode-1.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: bootnode-1
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-1.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-1
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-10.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-10
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-11.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-11
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-12.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-12
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-13.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-13
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-14.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-14
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-15.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-15
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-16.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-16
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-17.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-17
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-18.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-18
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-19.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-19
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-2.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-2
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-20.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-20
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-21.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-21
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-22.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-22
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-23.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-23
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-24.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-24
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-25.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-25
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-26.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-26
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-27.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-27
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-28.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-28
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-29.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-29
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-3.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-3
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-30.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-30
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-31.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-31
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-32.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-32
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-33.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-33
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-34.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-34
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-35.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-35
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-36.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-36
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-37.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-37
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-38.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-38
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-39.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-39
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-4.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-4
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-40.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-40
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-41.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-41
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-42.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-42
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-43.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-43
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-44.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-44
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-45.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-45
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-46.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-46
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-47.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-47
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-48.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-48
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-49.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-49
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-5.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-5
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-50.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-50
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-6.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-6
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-7.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-7
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-8.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-8
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.teku-geth-9.peerdas-devnet-ssl-teku-1.yolkie.xyz
+    name: teku-geth-9
+
+  config: |
+    # How often to reload data from the nodes
+    reload_interval = "10s"
+    # If specified, a http server will serve static content here
+    server_address = "0.0.0.0:{{ .Values.httpPort}}"
+    # Shown in the document title, if specified
+    chain_name="{{ .Values.network }}"
+    # Local or non third party connection require rpc kind
+    {{- range .Values.endpoints }}
+    [[clients]]
+      url  = {{ .addr | quote }}
+      name = {{ .name | quote }}
+      kind = "rpc"
+    {{- end }}

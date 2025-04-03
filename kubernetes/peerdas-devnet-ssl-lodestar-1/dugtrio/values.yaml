@@ -1,0 +1,135 @@
+# Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/dugtrio.yaml.j2
+
+dugtrio:
+  fullnameOverride: dugtrio
+  image:
+    repository: docker.ethquokkaops.io/dh/ethpandaops/dugtrio
+    tag: latest
+    pullPolicy: Always
+  resources:
+    requests:
+      cpu: 100m
+      memory: 200Mi
+    limits:
+      cpu: 500m
+      memory: 1Gi
+  ingress:
+    enabled: true
+    className: ingress-nginx-public
+    hosts:
+      - host: beacon.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+        paths:
+          - path: /
+            pathType: Prefix
+
+  dugtrioFrontendTitle: "Dugtrio: peerdas-devnet-ssl-lodestar-1"
+  dugtrioProxyCount: 2
+  dugtrioProxyBlockedPaths:
+    - "^/teku/v[0-9]+/admin/.*"
+
+  endpoints:
+  # Rpc
+  - url: http://teku-geth-001:5052
+    name: rpc-teku-geth-001
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.bootnode-1.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: bootnode-1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-1.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-10.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-10
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-11.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-11
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-12.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-12
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-13.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-13
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-14.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-14
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-15.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-15
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-16.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-16
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-17.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-17
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-18.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-18
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-19.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-19
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-2.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-2
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-20.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-20
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-21.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-21
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-22.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-22
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-23.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-23
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-24.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-24
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-25.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-25
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-26.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-26
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-27.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-27
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-28.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-28
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-29.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-29
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-3.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-3
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-30.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-30
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-31.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-31
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-32.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-32
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-33.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-33
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-34.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-34
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-35.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-35
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-36.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-36
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-37.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-37
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-38.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-38
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-39.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-39
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-4.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-4
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-40.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-40
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-41.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-41
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-42.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-42
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-43.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-43
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-44.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-44
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-45.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-45
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-46.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-46
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-47.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-47
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-48.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-48
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-49.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-49
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-5.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-5
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-50.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-50
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-6.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-6
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-7.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-7
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-8.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-8
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lodestar-geth-9.peerdas-devnet-ssl-lodestar-1.yolkie.xyz
+    name: lodestar-geth-9

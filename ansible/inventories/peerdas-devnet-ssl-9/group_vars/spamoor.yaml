@@ -1,4 +1,4 @@
-spamoor_container_image: "public.ecr.aws/j7m9g6q8/temporary/spamoor:v0.0.3"
+spamoor_container_image: "public.ecr.aws/j7m9g6q8/temporary/spamoor:v0.0.5"
 
 spamoor_container_command: |
   blobs
