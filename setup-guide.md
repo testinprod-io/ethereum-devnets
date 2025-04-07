@@ -249,7 +249,7 @@ After running terraform apply, a new `ansible/new-devnet-1/inventory.ini` file w
 ## Update Ansible definition
 The full ansible definition is spread throughout `ansible/inventories/group_vars`. 
 
-Update the following: 
+Update the following at `all.yaml`: 
 - `domain`: Cloudflare DNS update in terraform.
 - `ethereum_genesis_timestamp`: Time to start genesis at.
 - `ethereum_genesis_generator_config_files.values.env.NUMBER_OF_VALIDATORS`: Number of validators created and assigned to the nodes.
