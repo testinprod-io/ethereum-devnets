@@ -1,0 +1,135 @@
+# Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/dugtrio.yaml.j2
+
+dugtrio:
+  fullnameOverride: dugtrio
+  image:
+    repository: docker.ethquokkaops.io/dh/ethpandaops/dugtrio
+    tag: latest
+    pullPolicy: Always
+  resources:
+    requests:
+      cpu: 100m
+      memory: 200Mi
+    limits:
+      cpu: 500m
+      memory: 1Gi
+  ingress:
+    enabled: true
+    className: ingress-nginx-public
+    hosts:
+      - host: beacon.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+        paths:
+          - path: /
+            pathType: Prefix
+
+  dugtrioFrontendTitle: "Dugtrio: peerdas-devnet-ssl-lighthouse-7"
+  dugtrioProxyCount: 2
+  dugtrioProxyBlockedPaths:
+    - "^/teku/v[0-9]+/admin/.*"
+
+  endpoints:
+  # Rpc
+  - url: http://teku-geth-001:5052
+    name: rpc-teku-geth-001
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.bootnode-1.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: bootnode-1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-1.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-10.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-10
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-11.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-11
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-12.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-12
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-13.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-13
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-14.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-14
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-15.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-15
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-16.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-16
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-17.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-17
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-18.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-18
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-19.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-19
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-2.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-2
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-20.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-20
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-21.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-21
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-22.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-22
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-23.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-23
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-24.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-24
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-25.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-25
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-26.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-26
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-27.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-27
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-28.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-28
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-29.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-29
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-3.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-3
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-30.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-30
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-31.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-31
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-32.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-32
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-33.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-33
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-34.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-34
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-35.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-35
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-36.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-36
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-37.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-37
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-38.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-38
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-39.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-39
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-4.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-4
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-40.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-40
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-41.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-41
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-42.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-42
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-43.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-43
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-44.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-44
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-45.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-45
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-46.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-46
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-47.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-47
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-48.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-48
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-49.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-49
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-5.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-5
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-50.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-50
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-6.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-6
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-7.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-7
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-8.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-8
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-erigon-9.peerdas-devnet-ssl-lighthouse-7.yolkie.xyz
+    name: lighthouse-erigon-9

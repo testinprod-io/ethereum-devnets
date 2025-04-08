@@ -1,0 +1,138 @@
+# Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/forkmon.yaml.j2
+
+forkmon:
+  fullnameOverride: forkmon
+  image:
+    repository: docker.ethquokkaops.io/dh/skylenet/nodemonitor
+    tag: darkmode
+    pullPolicy: IfNotPresent
+  ingress:
+    enabled: true
+    className: ingress-nginx-public
+    hosts:
+      - host: forkmon.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+        paths:
+          - path: /
+            pathType: Prefix
+  network: peerdas-devnet-ssl-lighthouse-6
+  endpoints:
+  # Rpc
+  - addr: http://geth-teku-001:8545
+    name: rpc-teku-geth-001
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.bootnode-1.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: bootnode-1
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-1.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-1
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-10.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-10
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-11.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-11
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-12.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-12
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-13.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-13
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-14.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-14
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-15.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-15
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-16.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-16
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-17.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-17
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-18.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-18
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-19.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-19
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-2.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-2
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-20.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-20
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-21.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-21
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-22.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-22
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-23.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-23
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-24.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-24
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-25.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-25
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-26.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-26
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-27.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-27
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-28.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-28
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-29.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-29
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-3.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-3
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-30.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-30
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-31.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-31
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-32.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-32
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-33.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-33
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-34.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-34
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-35.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-35
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-36.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-36
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-37.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-37
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-38.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-38
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-39.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-39
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-4.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-4
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-40.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-40
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-41.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-41
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-42.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-42
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-43.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-43
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-44.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-44
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-45.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-45
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-46.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-46
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-47.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-47
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-48.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-48
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-49.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-49
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-5.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-5
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-50.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-50
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-6.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-6
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-7.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-7
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-8.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-8
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-reth-9.peerdas-devnet-ssl-lighthouse-6.yolkie.xyz
+    name: lighthouse-reth-9
+
+  config: |
+    # How often to reload data from the nodes
+    reload_interval = "10s"
+    # If specified, a http server will serve static content here
+    server_address = "0.0.0.0:{{ .Values.httpPort}}"
+    # Shown in the document title, if specified
+    chain_name="{{ .Values.network }}"
+    # Local or non third party connection require rpc kind
+    {{- range .Values.endpoints }}
+    [[clients]]
+      url  = {{ .addr | quote }}
+      name = {{ .name | quote }}
+      kind = "rpc"
+    {{- end }}

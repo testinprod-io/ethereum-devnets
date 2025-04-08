@@ -17,6 +17,21 @@ pip install -r requirements.txt
 ./setup.sh
 ```
 
+You may have to install the following if you don't have one
+```bash
+# Install ansible
+brew install ansible
+
+# Install asdf
+brew install coreutils curl git
+brew install asdf
+
+# Install terraform
+asdf plugin add terraform
+asdf install terraform latest
+asdf global terraform latest
+```
+
 ## Terraform
 Need the following access to these components:
 - S3(any provider) for terraform backend
@@ -249,9 +264,9 @@ After running terraform apply, a new `ansible/new-devnet-1/inventory.ini` file w
 ## Update Ansible definition
 The full ansible definition is spread throughout `ansible/inventories/group_vars`. 
 
-Update the following at `all.yaml`: 
+Update the following at `all/all.yaml`: 
 - `domain`: Cloudflare DNS update in terraform.
-- `ethereum_genesis_timestamp`: Time to start genesis at.
+- `ethereum_genesis_timestamp`: Time to start genesis at. Run `date +%s` to get the current timestamp on Unix
 - `ethereum_genesis_generator_config_files.values.env.NUMBER_OF_VALIDATORS`: Number of validators created and assigned to the nodes.
 - `bootstrap_default_user_authorized_keys`: ssh keys bootstraped to each nodes. 
 
@@ -314,3 +329,11 @@ After running `ansible-playbook`, there will be following artifacts:
 - `ansible/tmp/new-devnet-1`: Cache used during ansible run.
 - `network-configs/new-devnet-1`: Network configurations like genesis files.
 - `kubernetes/new-devnet-1`: Auto-generated k8s files which can used to host other devnet-related toolings to a k8s cluster.
+
+### Common errors
+ERROR! [Errno 24] Too many open files
+Unable to remove temporary file [Errno 24] Too many open files: '[some_address]/.ansible/tmp/ansible-local-21830_1ye4bca/ansiballz_cache'
+-> Run the following to increase the max number of files to be opened.
+```bash
+ulimit -n 4096
+```
