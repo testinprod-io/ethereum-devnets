@@ -1,0 +1,138 @@
+# Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/forkmon.yaml.j2
+
+forkmon:
+  fullnameOverride: forkmon
+  image:
+    repository: docker.ethquokkaops.io/dh/skylenet/nodemonitor
+    tag: darkmode
+    pullPolicy: IfNotPresent
+  ingress:
+    enabled: true
+    className: ingress-nginx-public
+    hosts:
+      - host: forkmon.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+        paths:
+          - path: /
+            pathType: Prefix
+  network: peerdas-devnet-ssl-lighthouse-8
+  endpoints:
+  # Rpc
+  - addr: http://geth-teku-001:8545
+    name: rpc-teku-geth-001
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.bootnode-1.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: bootnode-1
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-1.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-1
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-10.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-10
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-11.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-11
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-12.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-12
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-13.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-13
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-14.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-14
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-15.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-15
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-16.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-16
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-17.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-17
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-18.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-18
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-19.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-19
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-2.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-2
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-20.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-20
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-21.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-21
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-22.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-22
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-23.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-23
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-24.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-24
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-25.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-25
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-26.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-26
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-27.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-27
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-28.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-28
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-29.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-29
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-3.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-3
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-30.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-30
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-31.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-31
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-32.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-32
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-33.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-33
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-34.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-34
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-35.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-35
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-36.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-36
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-37.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-37
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-38.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-38
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-39.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-39
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-4.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-4
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-40.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-40
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-41.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-41
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-42.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-42
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-43.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-43
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-44.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-44
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-45.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-45
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-46.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-46
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-47.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-47
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-48.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-48
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-49.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-49
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-5.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-5
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-50.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-50
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-6.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-6
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-7.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-7
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-8.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-8
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-9.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-9
+
+  config: |
+    # How often to reload data from the nodes
+    reload_interval = "10s"
+    # If specified, a http server will serve static content here
+    server_address = "0.0.0.0:{{ .Values.httpPort}}"
+    # Shown in the document title, if specified
+    chain_name="{{ .Values.network }}"
+    # Local or non third party connection require rpc kind
+    {{- range .Values.endpoints }}
+    [[clients]]
+      url  = {{ .addr | quote }}
+      name = {{ .name | quote }}
+      kind = "rpc"
+    {{- end }}

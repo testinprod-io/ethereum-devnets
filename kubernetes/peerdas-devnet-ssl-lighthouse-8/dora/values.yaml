@@ -1,0 +1,466 @@
+# Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/dora.yaml.j2
+
+dora:
+  fullnameOverride: dora
+  image:
+    repository: docker.ethquokkaops.io/dh/ethpandaops/dora
+    tag: fulu-support
+    pullPolicy: IfNotPresent
+  resources:
+    requests:
+      cpu: 500m
+      memory: 1Gi
+    limits:
+      cpu: 1000m
+      memory: 2Gi
+  ingress:
+    enabled: true
+    className: ingress-nginx-public
+    hosts:
+      - host: dora.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+        paths:
+          - path: /
+            pathType: Prefix
+
+  name: peerdas-devnet-ssl-lighthouse-8
+  configPath: "https://config.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz/cl/config.yaml"
+  validatorNamesInventory: "https://config.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz/api/v1/nodes/validator-ranges"
+  proxyCount: 2
+  extraEnv:
+    - name: FRONTEND_PPROF
+      value: "true"
+    - name: FRONTEND_SHOW_SENSITIVE_PEER_INFOS
+      value: "true"
+    - name: FRONTEND_SHOW_PEER_DAS_INFOS
+      value: "true"
+    - name: FRONTEND_ETH_EXPLORER_LINK
+      value: "https://explorer.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz"
+    - name: FRONTEND_PUBLIC_RPC_URL
+      value: "https://rpc.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz"
+    - name: FRONTEND_SHOW_SUBMIT_DEPOSIT
+      value: "true"
+    - name: FRONTEND_SHOW_SUBMIT_EL_REQUESTS
+      value: "true"
+  postgresql:
+    name: "dora-postgresql"
+    fullnameOverride: "dora-postgresql"
+
+  endpoints:
+  # Rpc
+  - url: http://teku-geth-001:5052
+    name: rpc-teku-geth-001
+    archive: true
+    priority: 1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.bootnode-1.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: bootnode-1
+    priority: -1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-1.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-1
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-10.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-10
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-11.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-11
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-12.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-12
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-13.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-13
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-14.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-14
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-15.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-15
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-16.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-16
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-17.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-17
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-18.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-18
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-19.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-19
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-2.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-2
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-20.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-20
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-21.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-21
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-22.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-22
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-23.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-23
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-24.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-24
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-25.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-25
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-26.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-26
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-27.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-27
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-28.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-28
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-29.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-29
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-3.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-3
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-30.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-30
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-31.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-31
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-32.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-32
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-33.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-33
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-34.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-34
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-35.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-35
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-36.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-36
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-37.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-37
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-38.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-38
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-39.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-39
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-4.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-4
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-40.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-40
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-41.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-41
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-42.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-42
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-43.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-43
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-44.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-44
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-45.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-45
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-46.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-46
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-47.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-47
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-48.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-48
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-49.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-49
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-5.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-5
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-50.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-50
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-6.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-6
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-7.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-7
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-8.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-8
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@bn.lighthouse-besu-9.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-9
+    priority: -1
+    archive: true
+  executionEndpoints:
+  # Rpc
+  - url: http://geth-teku-001:8545
+    name: rpc-teku-geth-001
+    archive: true
+    priority: 1
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.bootnode-1.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: bootnode-1
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-1.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-1
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-10.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-10
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-11.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-11
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-12.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-12
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-13.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-13
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-14.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-14
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-15.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-15
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-16.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-16
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-17.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-17
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-18.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-18
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-19.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-19
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-2.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-2
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-20.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-20
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-21.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-21
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-22.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-22
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-23.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-23
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-24.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-24
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-25.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-25
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-26.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-26
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-27.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-27
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-28.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-28
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-29.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-29
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-3.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-3
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-30.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-30
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-31.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-31
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-32.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-32
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-33.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-33
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-34.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-34
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-35.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-35
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-36.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-36
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-37.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-37
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-38.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-38
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-39.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-39
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-4.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-4
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-40.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-40
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-41.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-41
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-42.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-42
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-43.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-43
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-44.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-44
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-45.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-45
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-46.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-46
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-47.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-47
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-48.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-48
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-49.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-49
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-5.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-5
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-50.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-50
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-6.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-6
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-7.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-7
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-8.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-8
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.none-devnets.node_ingress.combined}>@rpc.lighthouse-besu-9.peerdas-devnet-ssl-lighthouse-8.yolkie.xyz
+    name: lighthouse-besu-9
+    priority: -1
+    archive: false
