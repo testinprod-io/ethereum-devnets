@@ -9,7 +9,7 @@
     "accountStartNonce": "0x0",
     "maximumExtraDataSize": "0xffff",
     "minGasLimit": "0x1388",
-    "networkID": "0x1a5c1f0a5",
+    "networkID": "0x1a2d2e112",
     "MergeForkIdTransition": "0x0",
     "maxCodeSize": "0x6000",
     "maxCodeSizeTransition": "0x0",
@@ -70,15 +70,15 @@
       }
     },
     "depositContractAddress": "0x4242424242424242424242424242424242424242",
-    "eip2537TransitionTimestamp": "0x6801f546",
-    "eip2935TransitionTimestamp": "0x6801f546",
-    "eip6110TransitionTimestamp": "0x6801f546",
-    "eip7002TransitionTimestamp": "0x6801f546",
-    "eip7251TransitionTimestamp": "0x6801f546",
-    "eip7702TransitionTimestamp": "0x6801f546",
-    "eip7623TransitionTimestamp": "0x6801f546",
-    "eip7692TransitionTimestamp": "0x6801f846",
-    "eip7594TransitionTimestamp": "0x6801f846"
+    "eip2537TransitionTimestamp": "0x680674ee",
+    "eip2935TransitionTimestamp": "0x680674ee",
+    "eip6110TransitionTimestamp": "0x680674ee",
+    "eip7002TransitionTimestamp": "0x680674ee",
+    "eip7251TransitionTimestamp": "0x680674ee",
+    "eip7702TransitionTimestamp": "0x680674ee",
+    "eip7623TransitionTimestamp": "0x680674ee",
+    "eip7692TransitionTimestamp": "0x680677ee",
+    "eip7594TransitionTimestamp": "0x680677ee"
   },
   "genesis": {
     "seal": {
@@ -89,7 +89,7 @@
     },
     "difficulty": "0x0",
     "author": "0x0000000000000000000000000000000000000000",
-    "timestamp": "0x6801efde",
+    "timestamp": "0x680667b6",
     "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
     "extraData": "",
     "gasLimit": "0x17d7840"

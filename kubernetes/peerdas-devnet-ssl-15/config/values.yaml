@@ -1,7 +1,7 @@
 # Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/config.yaml.j2
 
 network: peerdas-devnet-ssl-15
-chainId: 7075917989
+chainId: 7026696466
 
 domain: peerdas-devnet-ssl-15.yolkie.xyz
 

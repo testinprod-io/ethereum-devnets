@@ -3,9 +3,9 @@ default_ethereum_client_images:
   lighthouse: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:unstable-476f3a593
   lighthouse_validator: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:unstable-476f3a593
   lodestar: docker.ethquokkaops.io/dh/ethpandaops/lodestar:peerDAS-5cd8ace127
-  nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:getBlobsV2-525dd9006
-  prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:peerdas-devnet-6
-  prysm_validator: docker.ethquokkaops.io/dh/ethpandaops/prysm-validator:peerdas-devnet-6
+  nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:getBlobsV2-f56416d
+  prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:peerDAS-linux-amd64-eeb3cdc
+  prysm_validator: docker.ethquokkaops.io/dh/ethpandaops/prysm-validator:peerDAS-linux-amd64-eeb3cdc
   teku: docker.ethquokkaops.io/dh/ethpandaops/teku:nashatyrev-das-7109573
   grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:hangleang-peerdas-devnet-6-minimal-97017f9
 ### Execution layer clients
@@ -15,7 +15,6 @@ default_ethereum_client_images:
   ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:master
   nethermind: docker.ethquokkaops.io/dh/ethpandaops/nethermind:feature-peerdas
   reth: docker.ethquokkaops.io/dh/ethpandaops/reth:rkrasiuk-peerdas
-
 
 default_tooling_images:
   xatu_sentry: docker.ethquokkaops.io/dh/ethpandaops/xatu:latest
