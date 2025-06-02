@@ -1,4 +1,4 @@
-ansible_user: root
+ansible_user: devops
 ansible_python_interpreter: /usr/bin/python3
 devnet_name: peerdas
 
@@ -47,7 +47,7 @@ docker_networks_shared:
 
 # role: geerlingguy.docker
 docker_users:
-  - root
+  - devops
 docker_daemon_options:
   "log-driver": "json-file"
   "log-opts":

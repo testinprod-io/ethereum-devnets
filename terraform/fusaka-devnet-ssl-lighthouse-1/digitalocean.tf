@@ -69,7 +69,7 @@ locals {
 
 locals {
   digitalocean_default_region = "ams3"
-  digitalocean_default_size   = "s-4vcpu-8gb-amd"
+  digitalocean_default_size   = "s-8vcpu-16gb-amd"
   digitalocean_default_image  = "debian-12-x64"
   digitalocean_global_tags = [
     "Owner:Devops",
@@ -197,6 +197,16 @@ resource "digitalocean_firewall" "main" {
   inbound_rule {
     protocol         = "udp"
     port_range       = "30303"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "42069"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+  inbound_rule {
+    protocol         = "udp"
+    port_range       = "42069"
     source_addresses = ["0.0.0.0/0", "::/0"]
   }
 

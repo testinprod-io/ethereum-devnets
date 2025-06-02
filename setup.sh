@@ -14,7 +14,7 @@ asdf plugin add python || true
 asdf plugin add yq https://github.com/sudermanjr/asdf-yq.git
 asdf plugin add awscli || true
 
-asdf plugin-list  || true
+asdf plugin list  || true
 asdf install || true
 asdf reshim || true
 
