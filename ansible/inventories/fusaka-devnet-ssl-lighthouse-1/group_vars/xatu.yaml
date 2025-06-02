@@ -7,6 +7,8 @@ xatu_sentry_config_network_name_override: "{{ ethereum_network_name }}"
 xatu_sentry_container_networks: "{{ docker_networks_shared }}"
 xatu_sentry_container_image: "{{ default_tooling_images.xatu_sentry }}"
 
+ethereum_node_xatu_sentry_enabled: true
+
 xatu_sentry_container_command:
   - sentry
   - --config=/config.yaml
@@ -17,11 +19,12 @@ xatu_sentry_config:
   name: "{{ xatu_sentry_config_name }}"
   ntpServer: time.google.com
   ethereum:
-    beaconNodeAddress: "{{ vars[ethereum_node_cl + '_container_name'] }}:{{ethereum_node_cl_ports_http_beacon}}"
+    beaconNodeAddress: http://{{ vars[ethereum_node_cl + '_container_name'] }}:{{ethereum_node_cl_ports_http_beacon}}
     overrideNetworkName: "{{ xatu_sentry_config_network_name_override }}"
     beaconSubscriptions:
     - attestation
     - block
+    - block_gossip
     - chain_reorg
     - finalized_checkpoint
     - head
@@ -50,6 +53,7 @@ xatu_sentry_config:
       - BEACON_API_ETH_V1_EVENTS_BLOB_SIDECAR
       - BEACON_API_ETH_V1_EVENTS_BLOCK
       - BEACON_API_ETH_V1_EVENTS_BLOCK_V2
+      - BEACON_API_ETH_V1_EVENTS_BLOCK_GOSSIP
       - BEACON_API_ETH_V1_EVENTS_CHAIN_REORG
       - BEACON_API_ETH_V1_EVENTS_CHAIN_REORG_V2
       - BEACON_API_ETH_V1_EVENTS_FINALIZED_CHECKPOINT
