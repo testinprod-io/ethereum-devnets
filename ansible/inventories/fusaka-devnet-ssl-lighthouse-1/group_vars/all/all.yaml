@@ -25,8 +25,8 @@ ethstats_secret: "{{ secret_ethstats }}"
 ### Checkpoint sync specific for Ansible & Kubernetes
 checkpoint_sync_node: bootnode-1
 ethereum_node_cl_checkpoint_sync_enabled: true
-checkpoint_sync_url: https://checkpoint-sync.{{ ethereum_network_name }}.{{ domain }}
-#checkpoint_sync_url: https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@bn.{{ checkpoint_sync_node }}.{{ ethereum_network_name }}.{{ domain }}
+#checkpoint_sync_url: https://checkpoint-sync.{{ ethereum_network_name }}.{{ domain }}
+checkpoint_sync_url: https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@bn.{{ checkpoint_sync_node }}.{{ ethereum_network_name }}.{{ domain }}
 checkpoint_sync_url_kube: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.peerdas-devnets.node_ingress.combined}>@bn.{{ checkpoint_sync_node }}.{{ ethereum_network_name }}.{{ domain }}
 #  ██████╗░░█████╗░██╗░░░░░███████╗  ██╗░░░██╗░█████╗░██████╗░░██████╗
 #  ██╔══██╗██╔══██╗██║░░░░░██╔════╝  ██║░░░██║██╔══██╗██╔══██╗██╔════╝
@@ -41,7 +41,7 @@ ethereum_genesis_generator_version: "{{ ethereum_genesis_generator_container_ima
 ethereum_genesis_network_seed: "{{ ansible_inventory_sources[0] }}"
 ethereum_genesis_chain_id: "70{{ 99999999 | random(start=10000000, seed=ethereum_genesis_network_seed) }}"
 ethereum_genesis_generator_output_dir: "../network-configs/{{ ethereum_network_name }}"
-ethereum_genesis_timestamp: "1748181547"
+ethereum_genesis_timestamp: "1748853097"
 ethereum_genesis_timedelay: 3000
 ethereum_genesis_fork_version_suffix: "{{ 999999 | random(start=100000, seed=ethereum_genesis_network_seed) }}"
 ethereum_genesis_timestamp_relative_cmd:
@@ -63,18 +63,30 @@ ethereum_genesis_generator_config_files:
     export DENEB_FORK_VERSION="0x50{{ ethereum_genesis_fork_version_suffix }}"
     export ELECTRA_FORK_VERSION="0x60{{ ethereum_genesis_fork_version_suffix }}"
     export FULU_FORK_VERSION="0x70{{ ethereum_genesis_fork_version_suffix }}"
-    export FULU_FORK_EPOCH="1"
+    export FULU_FORK_EPOCH=1
     export GENESIS_TIMESTAMP={{ ethereum_genesis_timestamp }}
     export GENESIS_DELAY={{ ethereum_genesis_timedelay }}
-    #export SLOT_DURATION_IN_SECONDS=12
-    #export EJECTION_BALANCE=16000000000
-    #export BLOB_SIDECAR_SUBNET_COUNT_ELECTRA=9
-    export MAX_BLOBS_PER_BLOCK_ELECTRA=9
-    export MAX_BLOBS_PER_BLOCK_FULU=72
-    export MAX_BLOBS_PER_BLOCK=72
-    export TARGET_BLOBS_PER_BLOCK_ELECTRA=72
-    export TARGET_BLOBS_PER_BLOCK_FULU=72
-    export TARGET_BLOBS_PER_BLOCK=72
+    export WITHDRAWAL_TYPE=0x01
+    export BPO_1_EPOCH=256
+    export BPO_1_MAX_BLOBS=72
+    export BPO_1_TARGET_BLOBS=72
+    export BPO_1_BASE_FEE_UPDATE_FRACTION="5007716"
+    export BPO_2_EPOCH=512
+    export BPO_2_MAX_BLOBS=72
+    export BPO_2_TARGET_BLOBS=72
+    export BPO_2_BASE_FEE_UPDATE_FRACTION="5007716"
+    export BPO_3_EPOCH=768
+    export BPO_3_MAX_BLOBS=72
+    export BPO_3_TARGET_BLOBS=72
+    export BPO_3_BASE_FEE_UPDATE_FRACTION="5007716"
+    export BPO_4_EPOCH=1024
+    export BPO_4_MAX_BLOBS=72
+    export BPO_4_TARGET_BLOBS=72
+    export BPO_4_BASE_FEE_UPDATE_FRACTION="5007716"
+    export BPO_5_EPOCH=1280
+    export BPO_5_MAX_BLOBS=72
+    export BPO_5_TARGET_BLOBS=72
+    export BPO_5_BASE_FEE_UPDATE_FRACTION="5007716"
 
 ethereum_genesis_validator_keys_output_dir: "{{ ansible_inventory_sources[0] | dirname }}/files/validator_keys"
 ethereum_genesis_validator_bls_change_execution_address: "{{ ethereum_node_cl_validator_fee_recipient }}"

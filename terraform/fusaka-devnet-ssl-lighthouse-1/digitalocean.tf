@@ -339,5 +339,5 @@ resource "local_file" "ansible_inventory" {
       )
     }
   )
-  filename = "../../ansible/inventories/peerdas-devnet-ssl-lighthouse-11/inventory.ini"
+  filename = "../../ansible/inventories/fusaka-devnet-ssl-lighthouse-1/inventory.ini"
 }

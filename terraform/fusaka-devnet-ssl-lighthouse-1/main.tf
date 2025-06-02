@@ -22,12 +22,12 @@ terraform {
   backend "s3" {
     skip_credentials_validation = true
     skip_metadata_api_check     = true
-    endpoints                   = { s3 = "https://fra1.digitaloceanspaces.com" }
+    endpoints                   = { s3 = "https://nyc3.digitaloceanspaces.com" }
     skip_requesting_account_id  = true
     skip_s3_checksum            = true
     region                      = "us-east-1"
     bucket                      = "ethereum-devnets"
-    key                         = "infrastructure/peerdas-devnet-ssl-lighthouse-11/terraform.tfstate"
+    key                         = "infrastructure/fusaka-devnet-ssl-lighthouse-1/terraform.tfstate"
   }
 }
 
@@ -57,7 +57,7 @@ variable "cloudflare_api_token" {
 
 variable "ethereum_network" {
   type    = string
-  default = "peerdas-devnet-ssl-lighthouse-11"
+  default = "fusaka-devnet-ssl-lighthouse-1"
 }
 
 variable "base_cidr_block" {
