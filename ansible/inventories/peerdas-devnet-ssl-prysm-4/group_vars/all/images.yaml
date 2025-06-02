@@ -1,6 +1,6 @@
 default_ethereum_client_images:
 ### Consensus layer clients
-  lighthouse: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:unstable-5933901
+  lighthouse: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:peerdas-devnet-7-b014675
   lodestar: docker.ethquokkaops.io/dh/ethpandaops/lodestar:peerDAS-1f339ea
   nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:gbv2-8adb69c
   prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:peerDAS-8d812d5
@@ -9,7 +9,7 @@ default_ethereum_client_images:
   grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:hangleang-peerdas-devnet-7-minimal-c074019
 ### Execution layer clients
   besu: docker.ethquokkaops.io/dh/hyperledger/besu:latest
-  geth: docker.ethquokkaops.io/dh/ethpandaops/geth:peerdas-devnet-7-c192c9d
+  geth: public.ecr.aws/s5g8t9d9/ethereum-devnets/geth:peerdas-devnet-7-noGetBlobs
   erigon: docker.ethquokkaops.io/dh/thorax/erigon:devel
   ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:master
   nethermind: docker.ethquokkaops.io/dh/ethpandaops/nethermind:feature-peerdas-0409e07

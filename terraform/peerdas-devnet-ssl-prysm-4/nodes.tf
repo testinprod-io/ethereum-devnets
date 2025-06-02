@@ -74,7 +74,7 @@ variable "prysm_geth" {
     count           = 50
     validator_start = 0
     validator_end   = 5000
-    region          = "nyc3"
+    region          = "nyc1"
   }
 }
 
