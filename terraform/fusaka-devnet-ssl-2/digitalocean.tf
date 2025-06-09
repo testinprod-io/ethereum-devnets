@@ -339,5 +339,5 @@ resource "local_file" "ansible_inventory" {
       )
     }
   )
-  filename = "../../ansible/inventories/fusaka-devnet-ssl-prysm-2/inventory.ini"
+  filename = "../../ansible/inventories/fusaka-devnet-ssl-2/inventory.ini"
 }

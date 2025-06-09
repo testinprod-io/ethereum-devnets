@@ -6,8 +6,8 @@ ethereum_cl_bootnodes:
 
 ethereum_el_bootnodes:
   - "{{ hostvars['bootnode-1']['ethereum_node_fact_el_enode'] }}"
-  #- "{{ hostvars['teku-geth-1']['ethereum_node_fact_el_enode'] }}"
-  #- "{{ hostvars['lighthouse-geth-1']['ethereum_node_fact_el_enode'] }}"
+
+ethereum_node_xatu_sentry_enabled: true
 
 ethereum_el_staticpeers:  "{{ (groups['all'] | select('ne', inventory_hostname) | map('extract', hostvars, 'ethereum_node_fact_el_enode') | select('defined') | list) | to_json | from_json }}"
 

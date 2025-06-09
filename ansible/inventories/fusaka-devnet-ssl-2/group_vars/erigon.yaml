@@ -17,12 +17,45 @@ erigon_container_env:
   VIRTUAL_HOST: "{{ ethereum_node_rcp_hostname }}"
   VIRTUAL_PORT: "{{ ethereum_node_el_ports_http_rpc | string }}"
   LETSENCRYPT_HOST: "{{ ethereum_node_rcp_hostname }}"
+
+erigon_container_ports_ipv6:
+  - "[::]:{{ erigon_ports_p2p }}:{{ erigon_ports_p2p }}"
+  - "[::]:{{ erigon_ports_p2p }}:{{ erigon_ports_p2p }}/udp"
+  - "[::]:{{ erigon_ports_torrent }}:{{ erigon_ports_torrent }}"
+  - "[::]:{{ erigon_ports_torrent }}:{{ erigon_ports_torrent }}/udp"
+  - "[::]:{{ erigon_new_p2p_port }}:{{ erigon_new_p2p_port }}"
+  - "[::]:{{ erigon_new_p2p_port }}:{{ erigon_new_p2p_port }}/udp"
+
+erigon_container_ports_ipv4:
+  - "127.0.0.1:{{ erigon_ports_engine }}:{{ erigon_ports_engine }}"
+  - "127.0.0.1:{{ erigon_ports_http_rpc }}:{{ erigon_ports_http_rpc }}"
+  - "127.0.0.1:{{ erigon_ports_metrics }}:{{ erigon_ports_metrics }}"
+  - "0.0.0.0:{{ erigon_ports_p2p }}:{{ erigon_ports_p2p }}"
+  - "0.0.0.0:{{ erigon_ports_p2p }}:{{ erigon_ports_p2p }}/udp"
+  - "0.0.0.0:{{ erigon_ports_torrent }}:{{ erigon_ports_torrent }}"
+  - "0.0.0.0:{{ erigon_ports_torrent }}:{{ erigon_ports_torrent }}/udp"
+  - "0.0.0.0:{{ erigon_new_p2p_port }}:{{ erigon_new_p2p_port }}"
+  - "0.0.0.0:{{ erigon_new_p2p_port }}:{{ erigon_new_p2p_port }}/udp"
+
+erigon_container_command_default:
+  - --datadir=/data
+  - --nat=extip:{{ erigon_announced_ip }}
+  - --http
+  - --http.addr=0.0.0.0
+  - --http.port={{ erigon_ports_http_rpc }}
+  - --torrent.port={{ erigon_ports_torrent }}
+  - --authrpc.jwtsecret=/execution-auth.jwt
+  - --authrpc.addr=0.0.0.0
+  - --authrpc.port={{ erigon_ports_engine }}
+  - --authrpc.vhosts=*
+  - --metrics
+  - --metrics.addr=0.0.0.0
+  - --metrics.port={{ erigon_ports_metrics }}
 erigon_container_command_extra_args:
-  - --chain=dev
   - --http.api=eth,erigon,engine,web3,net,debug,trace,txpool,admin
   - --http.vhosts=*
   - --ws
-  - --prune=htc
+  - --no-downloader
   - --networkid={{ ethereum_network_id }}
   - --db.size.limit=500GB
   - --bootnodes={{ ethereum_el_bootnodes | join(',') }}
@@ -80,7 +113,7 @@ prometheus_config: |
         - targets: ["{{ vars[ethereum_node_cl + '_container_name'] }}:{{ ethereum_node_cl_ports_metrics }}"]
           labels:
             instance: "{{ ethereum_network_name }}-{{ inventory_hostname }}"
-            supernode: "{{ ethereum_node_cl_supernode_enabled | bool }}"
+            supernode: "{{ ethereum_node_cl_supernode_enabled | bool | default(false) }}"
     - job_name: "execution"
       metrics_path: "/debug/metrics/prometheus"
       static_configs:
