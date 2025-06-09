@@ -1,18 +1,18 @@
 default_ethereum_client_images:
 ### Consensus layer clients
-  lighthouse: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:unstable-2f807e2
+  lighthouse: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:unstable-94a1446
   lodestar: docker.ethquokkaops.io/dh/ethpandaops/lodestar:peerDAS
   nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:bpo-parsing-c62f33f
   prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:peerdas-bpo
   prysm_validator: docker.ethquokkaops.io/dh/ethpandaops/prysm-validator:peerdas-bpo
   teku: docker.ethquokkaops.io/dh/ethpandaops/teku:master-7856340
-  grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:peerdas-fulu-88ead44
+  grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:peerdas-fulu-a0df259
 ### Execution layer clients
   besu: docker.ethquokkaops.io/dh/ethpandaops/besu:fusaka-devnet-0-ed8ec22
-  geth: docker.ethquokkaops.io/dh/ethpandaops/geth:fusaka-devnet-0-e17f97a
-  erigon: docker.ethquokkaops.io/dh/ethpandaops/erigon:fusaka-devnet-0-42ec7be
+  geth: docker.ethquokkaops.io/dh/ethpandaops/geth:fusaka-devnet-0-07321c6
+  erigon: docker.ethquokkaops.io/dh/ethpandaops/erigon:fusaka-devnet-0-ed36f15
   ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:master
-  nethermind: docker.ethquokkaops.io/dh/ethpandaops/nethermind:devnet-0-b151f48
+  nethermind: docker.ethquokkaops.io/dh/ethpandaops/nethermind:devnet-0
   reth: docker.ethquokkaops.io/dh/ethpandaops/reth:fusaka-devnet0-9a91b95
 
 
